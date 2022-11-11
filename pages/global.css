@@ -28,10 +28,6 @@ html {
 body {
   font-size: 2rem;
   padding: 2rem;
-  background-image: url("../public/Shiny\ Overlay\ \(1\).svg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 .btn {
   position: relative;
@@ -81,6 +77,7 @@ form {
   border: none;
   border-radius: var(--border-radius);
   box-shadow: var(--small-shadow);
+  background-image: url("../assets/images/background_1.svg");
 }
 
 form ul {
@@ -111,7 +108,7 @@ form ul li label {
   flex-grow: 1;
   text-align: left;
 }
-.submit-btn {
+form .submit-btn {
   width: fit-content;
   padding: calc(var(--padding) / 2) var(--padding);
   margin: var(--padding) 0;
