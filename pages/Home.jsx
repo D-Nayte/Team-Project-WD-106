@@ -1,15 +1,13 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "../context/actions/counterActions";
+import React, { useEffect } from "react";
+import Form from "../components/forms/DONTCHANGETHISFORM";
 
 function Home() {
-  return <h1>Home</h1>;
+  return (
+    <>
+      <h1>Home</h1>
+      <TestForm />
+    </>
+  );
 }
-
-//Redux examples
-// const counter = useSelector((state) => state.counter) gives you the prop to display it
-// const dispatch = useDispatch() changes the state in redux
-
-// <button className="btn" onClick={() => dispatch(increment())}>
 
 export default Home;

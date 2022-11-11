@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-//reducer
+//reducers
 function counter(count = 0, action) {
   switch (action.type) {
     case "INCREMENT":
@@ -14,11 +14,24 @@ function counter(count = 0, action) {
   }
 }
 
-function isLoggedIn(state = false, action) {
-  if (action === true) state = action;
-  return state;
+function isLoggedIn(state = null, action) {
+  console.log("reducer state:" + state, "reducer action:", action);
+  switch (action.type) {
+    case "setUser":
+      return (state = action.payload);
+    case "signOut":
+      return null;
+    default:
+      return state;
+  }
 }
 
 export default function allReducers() {
   return combineReducers({ counter, isLoggedIn });
 }
+
+//Redux examples
+// const counter = useSelector((state) => state.counter) gives you the prop to display it
+// const dispatch = useDispatch() changes the state in redux
+
+// <button className="btn" onClick={() => dispatch(increment())}>
