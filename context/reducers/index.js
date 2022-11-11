@@ -15,7 +15,6 @@ function counter(count = 0, action) {
 }
 
 function isLoggedIn(state = null, action) {
-  console.log("reducer state:" + state, "reducer action:", action);
   switch (action.type) {
     case "setUser":
       return (state = action.payload);
