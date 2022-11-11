@@ -1,3 +1,11 @@
+:root {
+  --main-color: rgb(140, 140, 255);
+  --padding: 2rem;
+  --border-radius: 0.7rem;
+  --small-border: 1px solid rgba(0, 0, 0, 0.2);
+  --small-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,6 +24,95 @@ ol {
 html {
   font-size: 62.5%;
 }
+
 body {
   font-size: 2rem;
+  padding: 2rem;
+  background-image: url("../public/Shiny\ Overlay\ \(1\).svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.btn {
+  position: relative;
+  padding: calc(var(--padding) / 4) calc(var(--padding) / 2);
+  border-radius: var(--border-radius);
+  border: none;
+  letter-spacing: 0.1rem;
+  background-color: transparent;
+  overflow: hidden;
+  box-shadow: var(--small-shadow);
+  color: rgb(97, 97, 97);
+  font-weight: bold;
+  transition: all 200ms ease-in;
+  cursor: pointer;
+}
+
+.btn::after {
+  content: "";
+  width: 150%;
+  height: 100%;
+  background-color: rgb(208, 208, 255);
+  position: absolute;
+  transform-origin: top;
+  rotate: z -35deg;
+  right: 45%;
+  top: 0;
+  border-radius: 50%;
+  transition: all 350ms ease-in-out;
+  z-index: -1;
+}
+
+.btn:hover:after {
+  background-color: var(--main-color);
+  height: 600%;
+  rotate: -90deg;
+}
+
+.btn:hover {
+  scale: 1.05;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: var(--small-border); */
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--small-shadow);
+}
+
+form ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: calc(var(--padding) / 2);
+  padding: calc(var(--padding) / 2);
+}
+
+form ul li {
+  flex-basis: 30%;
+  min-width: 150px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: calc(var(--padding) / 4) calc(var(--padding) / 2);
+  text-align: center;
+  border: var(--small-border);
+  border-radius: var(--border-radius);
+  gap: calc(var(--padding) / 2);
+}
+
+form ul li label {
+  flex-grow: 1;
+  text-align: left;
+}
+.submit-btn {
+  width: fit-content;
+  padding: calc(var(--padding) / 2) var(--padding);
+  margin: var(--padding) 0;
 }
