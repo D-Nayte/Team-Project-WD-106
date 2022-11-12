@@ -1,16 +1,15 @@
 import { combineReducers } from "redux";
 
 //reducers
-function counter(count = 0, action) {
+function companyData(comp = { lawyers: [], unions: [] }, action) {
   switch (action.type) {
-    case "INCREMENT":
-      return (count += 1);
-
-    case "DECREMENT":
-      return (count -= 1);
+    case "CHANGE_LAWYERS":
+      return { lawyers: action.payload, unions: comp.unions };
+    case "CHANGE_UNIONS":
+      return { unions: action.payload, lawyers: comp.lawyers };
 
     default:
-      return count;
+      return comp;
   }
 }
 
@@ -26,7 +25,7 @@ function isLoggedIn(state = null, action) {
 }
 
 export default function allReducers() {
-  return combineReducers({ counter, isLoggedIn });
+  return combineReducers({ companyData, isLoggedIn });
 }
 
 //Redux examples

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { createUser, logInUser, logOut } from "../../auth/userAccess";
 
@@ -18,6 +18,8 @@ function TestForm() {
     event.preventDefault();
     await createUser(email, password);
   }
+
+  const companyData = useSelector((state) => state.companyData);
 
   return (
     <div>
