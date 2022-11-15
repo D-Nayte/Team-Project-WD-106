@@ -76,7 +76,6 @@ form {
   border: none;
   border-radius: var(--border-radius);
   box-shadow: var(--small-shadow);
-  background-image: url("../assets/images/background_1.svg");
 }
 
 form ul {
