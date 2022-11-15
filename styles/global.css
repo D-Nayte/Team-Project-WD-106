@@ -1,5 +1,8 @@
 :root {
-  --main-color: rgb(140, 140, 255);
+  --main-cyan: #8cbdb9;
+  --main-dark: #2d3e4e;
+  --main-orange: #e09e50;
+  --main-creme: #e8eceb;
   --padding: 2rem;
   --border-radius: 0.7rem;
   --small-border: 1px solid rgba(0, 0, 0, 0.2);
