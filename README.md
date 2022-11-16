@@ -1,4 +1,4 @@
-# Development in process.....
+# Development in process..
 
 ## Install
 
