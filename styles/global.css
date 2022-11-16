@@ -9,10 +9,35 @@
   --small-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-ExtraBold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Bold.ttf");
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+p,
+body {
   padding: 0;
+  margin: 0;
+  font-weight: 500;
 }
 
 a {
@@ -26,11 +51,13 @@ ol {
 
 html {
   font-size: 62.5%;
+  color: var(--main-dark);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 
 body {
-  font-size: 2rem;
-  padding: 2rem;
+  font-size: 1.6rem;
 }
 .btn {
   position: relative;
