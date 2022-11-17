@@ -4,11 +4,15 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
+import { storage } from "../auth/fireBase";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 //Create new USer
-export async function createUser(email, password) {
+export async function createUser(email, password, picture) {
   try {
     const user = await createUserWithEmailAndPassword(auth, email, password);
+    await _uploadAvatar(user, picture);
+    return user;
   } catch (error) {
     if (error.code == "auth/email-already-in-use") {
       alert("The email address is already in use");
@@ -19,6 +23,7 @@ export async function createUser(email, password) {
     } else if (error.code == "auth/weak-password") {
       alert("The password is too weak.");
     }
+    return;
   }
 }
 
@@ -26,6 +31,7 @@ export async function createUser(email, password) {
 export async function logInUser(email = "tes12t@test.de", password = "123456") {
   try {
     const user = await signInWithEmailAndPassword(auth, email, password);
+    return user.user;
   } catch (error) {
     if (error.code == "auth/email-already-in-use") {
       alert("The email address is already in use");
@@ -36,9 +42,24 @@ export async function logInUser(email = "tes12t@test.de", password = "123456") {
     } else if (error.code == "auth/weak-password") {
       alert("The password is too weak.");
     }
+    return error;
   }
 }
 
 export async function logOut() {
   signOut(auth);
+}
+
+async function _uploadAvatar(user, picture) {
+  const id = user.user.uid;
+  const avatarRef = ref(storage, `user-data/${id}/avatar`);
+
+  try {
+    const snapshot = await uploadBytes(avatarRef, picture);
+    console.log("Snapshot uploadiong avatar", snapshot);
+    return true;
+  } catch (error) {
+    console.log("error laoding Avatar:", error);
+    return false;
+  }
 }

@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
-import TestForm from "../components/forms/DONTCHANGETHISFORM";
-import LawyerCard from "../components/LawyerCard";
+import React, { useEffect, useState } from "react";
+
 function Home() {
   return (
     <>
