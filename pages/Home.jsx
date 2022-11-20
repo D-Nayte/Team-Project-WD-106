@@ -4,9 +4,6 @@ function Home() {
   return (
     <>
       <h1>Home</h1>
-      <Forms />
-      <Submit />
-      <Search />
     </>
   );
 }
