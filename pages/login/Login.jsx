@@ -4,6 +4,7 @@ import { HiOutlineDocumentText } from "react-icons/hi";
 import styles from "../../styles/login.module.css";
 import AvatarPicture from "../../components/AvatarPicture";
 import ProfileButton from "../../components/profileButtons";
+import Search from "../../components/forms/search.js";
 
 function Login(user) {
   return (
@@ -31,6 +32,7 @@ function Login(user) {
       <h2 className={styles.welcome}>
         WE ARE READY TO HELP YOU. TELL US MORE ABOUT YOUR PROBLEM.
       </h2>
+      <Search />
     </div>
   );
 }
