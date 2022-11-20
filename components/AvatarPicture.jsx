@@ -27,7 +27,7 @@ function AvatarPicture() {
   return (
     <img
       className={style.avatar}
-      src={avatarURL && avatarURL}
+      src={avatarURL ? avatarURL : "/avatars/avatar-fem.png"}
       alt="Profil picture"
     />
   );
