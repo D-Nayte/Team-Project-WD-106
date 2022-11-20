@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
-import Navbar from "../components/navbar/Navbar";
+import React, { useEffect, useState } from "react";
 
 function Home() {
   return (
     <>
       <h1>Home</h1>
+      <Forms />
+      <Submit />
+      <Search />
     </>
   );
 }
