@@ -6,6 +6,7 @@ import {
 } from "firebase/auth";
 import { storage } from "../auth/fireBase";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import noAvatarPicture from "../assets/images/avatars/noAvatar.png";
 
 //Create new USer
 export async function createUser(email, password, picture) {
@@ -53,7 +54,7 @@ export async function logOut() {
 async function _uploadAvatar(user, picture) {
   const id = user.user.uid;
   const avatarRef = ref(storage, `user-data/${id}/avatar`);
-
+  if (!picture) picture = noAvatarPicture;
   try {
     const snapshot = await uploadBytes(avatarRef, picture);
     console.log("Snapshot uploadiong avatar", snapshot);
