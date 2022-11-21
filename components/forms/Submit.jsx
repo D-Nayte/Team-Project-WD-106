@@ -1,0 +1,91 @@
+import React, { useRef } from "react";
+import { createUser } from "../../auth/userAccess";
+import noAvatarPicture from "../../assets/images/avatars/noAvatar.png";
+
+function Submit() {
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
+  const confirmedPasswordRef = useRef("");
+  const pictureRef = useRef("");
+  const firstNameRef = useRef("");
+  const lastNameRef = useRef("");
+  let vaildPicture = false;
+
+  function handleFile(e) {
+    const file = e.files[0];
+    if (file) {
+      const type = file?.name.slice(-4);
+      if (type !== (".png" || "jpeg" || "svg")) {
+        alert("only .png / .jpeg / .svg");
+        return (vaildPicture = "wrong type");
+      }
+      return (vaildPicture = file);
+    }
+    return (vaildPicture = noAvatarPicture);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const confirmedPassword = confirmedPasswordRef.current.value;
+    const avatar = handleFile(pictureRef.current);
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    const firstName = firstNameRef.current.value;
+    const lastName = lastNameRef.current.value;
+    if (avatar === "wrong type") return alert("only .png / .jpeg / .svg");
+
+    if (confirmedPassword !== password) {
+      alert("Password does not match");
+    }
+
+    createUser(firstName, lastName, email, password, avatar);
+  }
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="firstname">Firstname</label>
+        <input type="text" placeholder="Firstname" required />
+        <label htmlFor="lastname">Lastname</label>
+        <input type="text" placeholder="Lastname" required />
+
+        <label>Enter your Email</label>
+        <input
+          ref={emailRef}
+          type="email"
+          name="email"
+          placeholder="Enter your Email"
+          required
+        />
+
+        <label>Enter your Password</label>
+        <input
+          type="password"
+          ref={passwordRef}
+          placeholder="Enter your Password"
+          minLength="6"
+          required
+        />
+
+        <label>Confirm your Password</label>
+        <input
+          type="password"
+          ref={confirmedPasswordRef}
+          placeholder="Confirm your Password"
+          minLength="6"
+          required
+        />
+
+        <label>Avatar Image</label>
+        <input
+          type="file"
+          ref={pictureRef}
+          onChange={(e) => handleFile(e.target)}
+        />
+        <button className="btn submit-btn">Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default Submit;

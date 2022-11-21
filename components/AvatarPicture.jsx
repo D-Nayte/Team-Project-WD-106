@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { storage } from "../auth/fireBase";
 import style from "../styles/avatar.module.css";
+import noAvatarPicture from "../assets/images/avatars/noAvatar.png";
 
 function AvatarPicture() {
   const [avatarURL, setAvatarURL] = useState(null);
@@ -20,6 +21,7 @@ function AvatarPicture() {
   useEffect(() => {
     (async () => {
       const url = await _getAvatarURL(user);
+      console.log(url);
       setAvatarURL(url);
     })();
   }, [user]);
@@ -27,7 +29,7 @@ function AvatarPicture() {
   return (
     <img
       className={style.avatar}
-      src={avatarURL ? avatarURL : "/avatars/avatar-fem.png"}
+      src={avatarURL ? avatarURL : noAvatarPicture.src}
       alt="Profil picture"
     />
   );

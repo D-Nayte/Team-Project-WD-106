@@ -4,9 +4,9 @@ function Forms() {
   return (
     <div className="log-in">
       <form>
-        <label for="email">Enter your Email</label>
+        <label>Enter your Email</label>
         <input type="email" name="email" placeholder="Enter your Email"></input>
-        <label for="password">Enter your Password</label>
+        <label>Enter your Password</label>
         <input type="password" placeholder="Enter your Password"></input>
         <button className="btn">Sign In</button>
         <p>

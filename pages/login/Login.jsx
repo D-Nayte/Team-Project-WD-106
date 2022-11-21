@@ -4,9 +4,12 @@ import { HiOutlineDocumentText } from "react-icons/hi";
 import styles from "../../styles/login.module.css";
 import AvatarPicture from "../../components/AvatarPicture";
 import ProfileButton from "../../components/profileButtons";
-import Search from "../../components/forms/search.js";
+import Search from "../../components/forms/Search";
+import { useSelector } from "react-redux";
 
-function Login(user) {
+function Login() {
+  const user = useSelector((state) => state.isLoggedIn);
+
   return (
     <div className={styles.loginPage}>
       <div className={styles.profile_card}>

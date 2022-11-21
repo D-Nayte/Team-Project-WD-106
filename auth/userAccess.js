@@ -9,10 +9,16 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import noAvatarPicture from "../assets/images/avatars/noAvatar.png";
 
 //Create new USer
-export async function createUser(email, password, picture) {
+export async function createUser(
+  firstName,
+  lastName,
+  email,
+  password,
+  picture
+) {
   try {
     const user = await createUserWithEmailAndPassword(auth, email, password);
-    await _uploadAvatar(user, picture);
+    if (picture) await _uploadAvatar(user, picture);
     return user;
   } catch (error) {
     if (error.code == "auth/email-already-in-use") {
