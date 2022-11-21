@@ -1,4 +1,4 @@
-import { getDownloadURL, ref } from "firebase/storage";
+import { getDownloadURL, listAll, ref } from "firebase/storage";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { storage } from "../auth/fireBase";
@@ -11,17 +11,20 @@ function AvatarPicture() {
 
   async function _getAvatarURL(user) {
     if (user) {
-      const id = user.uid;
-      const avataRaf = ref(storage, `user-data/${id}/avatar`);
-      const url = await getDownloadURL(avataRaf);
-      return url;
+      try {
+        const id = user.uid;
+        const avataRaf = ref(storage, `user-data/${id}/avatar`);
+        const url = await getDownloadURL(avataRaf);
+        return url;
+      } catch (error) {
+        console.log("Unable to fetch profile picture: ");
+      }
     }
   }
 
   useEffect(() => {
     (async () => {
       const url = await _getAvatarURL(user);
-      console.log(url);
       setAvatarURL(url);
     })();
   }, [user]);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BiMessageDetail } from "react-icons/bi";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import styles from "../../styles/login.module.css";
@@ -6,9 +6,30 @@ import AvatarPicture from "../../components/AvatarPicture";
 import ProfileButton from "../../components/profileButtons";
 import Search from "../../components/forms/Search";
 import { useSelector } from "react-redux";
+import { database } from "../../auth/fireBase";
+import { doc, getDoc } from "firebase/firestore";
 
 function Login() {
   const user = useSelector((state) => state.isLoggedIn);
+  const [userName, setUserName] = useState("no Name Found");
+
+  async function getUserName() {
+    console.log(user);
+    if (user) {
+      const id = user.uid;
+      const docRef = doc(database, "user-data", id);
+      const docSnap = await getDoc(docRef);
+      if (docSnap) {
+        console.log(docSnap.data());
+        setUserName(`${docSnap.data()?.firstName} ${docSnap.data()?.lastName}`);
+        return docSnap;
+      }
+    }
+  }
+
+  useEffect(() => {
+    getUserName();
+  }, [user]);
 
   return (
     <div className={styles.loginPage}>
@@ -16,7 +37,7 @@ function Login() {
         <div className={styles.profile_card_container}>
           <AvatarPicture />
           <div className={styles.documents_container}>
-            <p>{user?.firstname ? user?.firstname : "No name found"}</p>
+            <p>{userName && userName}</p>
             <p>
               <BiMessageDetail className={styles.icons} /> 2 new Messages
             </p>
@@ -25,7 +46,7 @@ function Login() {
             </p>
           </div>
         </div>
-        <h3>Email: {user.email ? user.email : "no Email"}</h3>
+        <h3>Email: {user?.email ? user?.email : "no Email"}</h3>
       </div>
       <div className={styles.profileButtons}>
         <ProfileButton title="Messages" />

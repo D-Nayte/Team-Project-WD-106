@@ -21,7 +21,7 @@ function Submit() {
       }
       return (vaildPicture = file);
     }
-    return (vaildPicture = noAvatarPicture);
+    return (vaildPicture = false);
   }
 
   function handleSubmit(e) {
@@ -35,7 +35,7 @@ function Submit() {
     if (avatar === "wrong type") return alert("only .png / .jpeg / .svg");
 
     if (confirmedPassword !== password) {
-      alert("Password does not match");
+      return alert("Password does not match");
     }
 
     createUser(firstName, lastName, email, password, avatar);
@@ -45,9 +45,14 @@ function Submit() {
     <div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstname">Firstname</label>
-        <input type="text" placeholder="Firstname" required />
+        <input
+          ref={firstNameRef}
+          type="text"
+          placeholder="Firstname"
+          required
+        />
         <label htmlFor="lastname">Lastname</label>
-        <input type="text" placeholder="Lastname" required />
+        <input type="text" ref={lastNameRef} placeholder="Lastname" required />
 
         <label>Enter your Email</label>
         <input

@@ -1,4 +1,4 @@
-import { auth } from "./fireBase";
+import { auth, database } from "../auth/fireBase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -7,6 +7,7 @@ import {
 import { storage } from "../auth/fireBase";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import noAvatarPicture from "../assets/images/avatars/noAvatar.png";
+import { doc, setDoc } from "firebase/firestore";
 
 //Create new USer
 export async function createUser(
@@ -18,7 +19,9 @@ export async function createUser(
 ) {
   try {
     const user = await createUserWithEmailAndPassword(auth, email, password);
+    await _addToDatabase(user, firstName, lastName);
     if (picture) await _uploadAvatar(user, picture);
+    console.log("FINISH");
     return user;
   } catch (error) {
     if (error.code == "auth/email-already-in-use") {
@@ -68,5 +71,20 @@ async function _uploadAvatar(user, picture) {
   } catch (error) {
     console.log("error laoding Avatar:", error);
     return false;
+  }
+}
+
+async function _addToDatabase(user, firstName, lastName) {
+  const id = user.user.uid;
+  const docRef = doc(database, `user-data`, id);
+
+  try {
+    const doc = await setDoc(docRef, {
+      firstName: firstName,
+      lastName: lastName,
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.log("Error adding document: ", e);
   }
 }
