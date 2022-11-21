@@ -1,16 +1,15 @@
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Documents from "../components/Documents";
-import Submit from "../components/forms/Submit";
+import Form from "../components/forms/Form";
 
 function Home() {
   return (
-    <>
-      <h1>Home</h1>
-      <Link href="/login">PAGE</Link>
-      <Submit />
-      <Documents />
-    </>
+    <main>
+      <Form />
+      <p>
+        If you need professional help from our experts please do not hesitate to
+        sign up.
+      </p>
+    </main>
   );
 }
 

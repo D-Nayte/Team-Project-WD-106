@@ -1,13 +1,35 @@
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useRef, useState } from "react";
+import { logInUser } from "../../auth/userAccess";
 
 function Forms() {
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
+  const router = useRouter();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    console.log(email, password);
+    const user = await logInUser(email, password);
+    router.push("/login");
+  }
+
   return (
     <div className="log-in">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Enter your Email</label>
-        <input type="email" name="email" placeholder="Enter your Email"></input>
+        <input
+          type="email"
+          ref={emailRef}
+          name="email"
+          placeholder="Enter your Email"></input>
         <label>Enter your Password</label>
-        <input type="password" placeholder="Enter your Password"></input>
+        <input
+          type="password"
+          ref={passwordRef}
+          placeholder="Enter your Password"></input>
         <button className="btn">Sign In</button>
         <p>
           No Account? <a href="#">Sign Up</a>
