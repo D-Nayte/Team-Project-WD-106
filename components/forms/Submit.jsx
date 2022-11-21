@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import { createUser } from "../../auth/userAccess";
 import noAvatarPicture from "../../assets/images/avatars/noAvatar.png";
+import { useRouter } from "next/router";
 
-function Submit() {
+function Submit({ classChanger }) {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const confirmedPasswordRef = useRef("");
@@ -10,6 +11,7 @@ function Submit() {
   const firstNameRef = useRef("");
   const lastNameRef = useRef("");
   let vaildPicture = false;
+  const router = useRouter();
 
   function handleFile(e) {
     const file = e.files[0];
@@ -24,7 +26,7 @@ function Submit() {
     return (vaildPicture = false);
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const confirmedPassword = confirmedPasswordRef.current.value;
     const avatar = handleFile(pictureRef.current);
@@ -38,11 +40,12 @@ function Submit() {
       return alert("Password does not match");
     }
 
-    createUser(firstName, lastName, email, password, avatar);
+    const user = await createUser(firstName, lastName, email, password, avatar);
+    router.push("/login");
   }
 
   return (
-    <div>
+    <div className={`submit-form ${classChanger}`}>
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstname">Firstname</label>
         <input

@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React, { useRef, useState } from "react";
 import { logInUser } from "../../auth/userAccess";
 
-function Forms() {
+function Forms({ setClassChanger }) {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const router = useRouter();
@@ -32,7 +32,10 @@ function Forms() {
           placeholder="Enter your Password"></input>
         <button className="btn">Sign In</button>
         <p>
-          No Account? <a href="#">Sign Up</a>
+          No Account?{" "}
+          <a href="#" onClick={() => setClassChanger("active")}>
+            Sign Up
+          </a>
         </p>
       </form>
     </div>
