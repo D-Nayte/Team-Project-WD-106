@@ -5,7 +5,7 @@ import styles from "../styles/documents.module.css";
 
 function Documents({ addClass }) {
   const [documents, setDocuments] = useState(null);
-  const [show, setshow] = useState(true);
+  const [show, setshow] = useState(false);
 
   async function getDocuments() {
     try {

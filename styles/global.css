@@ -61,6 +61,27 @@ body {
   font-size: 1.6rem;
 }
 
+.APP {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 calc(var(--padding));
+}
+
+main > p {
+  margin-top: var(--padding);
+  margin-bottom: var(--padding);
+}
+
 .active {
   --small-shadow-animate: 1px 8px 3px -4px rgba(0, 0, 0, 0.5);
   translate: 0px -5px;
@@ -94,7 +115,6 @@ body {
 
 form {
   position: relative;
-  margin: 1rem;
   box-shadow: var(--small-shadow);
   border: 2px solid var(--main-cyan);
   border-radius: var(--border-radius);
@@ -152,12 +172,3 @@ form input {
 form .submit-btn {
   margin: calc(var(--padding) / 1) 0 calc(var(--padding) / 1.5);
 }
-
-
-
-
-
-
-
-
-
