@@ -153,8 +153,11 @@ form .submit-btn {
   margin: calc(var(--padding) / 1) 0 calc(var(--padding) / 1.5);
 }
 
-
-
+footer{
+  text-align: center;
+  background-color:aqua;
+  border: 2px solid;
+}
 
 
 
