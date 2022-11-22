@@ -11,7 +11,6 @@ function Forms({ setClassChanger }) {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    console.log(email, password);
     const user = await logInUser(email, password);
     router.push("/login");
   }
