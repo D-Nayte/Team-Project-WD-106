@@ -7,4 +7,95 @@
     "email": "hj.metall@mail.com",
     "location": "67407"
   }
+  ,
+
+  {
+    "companyName": "UNISON",
+    "companyLogo": "../assets/images/logos/logo-1.png",
+    "buisnesss": ["catering", "public sector", "private sector", "civil service", "healthcare"],
+    "phone": "+4402088284462",
+    "email": "office@unison.com",
+    "location": "50123"
+  }
+,
+  {
+    "companyName": "GMB",
+    "companyLogo": "../assets/images/logos/logo-1.png",
+    "buisnesss": ["agriculture", "forestry", "construction", "distribution", "logistics"],
+    "phone": "+4402088145000",
+    "email": "office@gmb.com",
+    "location": "30124"
+  }
+,
+  {
+    "companyName": "Unite",
+    "companyLogo": "../assets/images/logos/logo-1.png",
+    "buisnesss": ["banking", "finance", "administration", "insurance"],
+    "phone": "+4402088144999",
+    "email": "contact@unite.com",
+    "location": "46555"
+  }
+,
+
+{
+  "companyName": "USDAW",
+  "companyLogo": "../assets/images/logos/logo-1.png",
+  "buisnesss": ["retail", "textile", "warehousing", "logistics", "customer service"],
+  "phone": "+4401482888444",
+  "email": "contact@usdaw.com",
+  "location": "21000"
+}
+,
+
+{
+  "companyName": "USDAW",
+  "companyLogo": "../assets/images/logos/logo-1.png",
+  "buisnesss": ["retail", "textile", "warehousing", "logistics", "customer service"],
+  "phone": "+4401482888444",
+  "email": "contact@usdaw.com",
+  "location": "60333"
+}
+,
+
+{
+  "companyName": "DGB",
+  "companyLogo": "../assets/images/logos/logo-1.png",
+  "buisnesss": ["healthcare", "retail", "customer service", "textile", "agriculture"],
+  "phone": "+49987364444",
+  "email": "kontaktiere@dgb.com",
+  "location": "20987"
+}
+,
+
+{
+  "companyName": "IG Metall",
+  "companyLogo": "../assets/images/logos/logo-1.png",
+  "buisnesss": ["metall", "forestry", "warehousing"],
+  "phone": "+49982225187",
+  "email": "kontaktiere@igmetall.com",
+  "location": "34511"
+}
+,
+
+{
+  "companyName": "GBH",
+  "companyLogo": "../assets/images/logos/logo-1.png",
+  "buisnesss": ["construction", "forestry", "carpentry", "metall"],
+  "phone": "+4306642143001",
+  "email": "kontaktiere@gbh.com",
+  "location": "51000"
+}
+,
+
+{
+  "companyName": "GPA",
+  "companyLogo": "../assets/images/logos/logo-1.png",
+  "buisnesss": ["journalism", "healthcare", "education", "culture"],
+  "phone": "+4306642143333",
+  "email": "kontaktiere@gpa.com",
+  "location": "21005"
+}
+
+
 ]
+

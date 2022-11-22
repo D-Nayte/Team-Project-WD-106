@@ -19,4 +19,76 @@
     "phone": "+49987363837",
     "email": "Maik.S@test.de"
   }
+  ,
+
+  {
+    "firstName": "Rosa",
+    "lastName": "Arendt",
+    "location": "68000",
+    "imageLink": "../assets/images/avatars/avatar-fem.png",
+    "rating": "4.7 / 5",
+    "speciality": ["warehousing", "retail"],
+    "phone": "+49987363000",
+    "email": "R.Arendt@test.de"
+  }
+  ,
+
+  {
+    "firstName": "Sophie",
+    "lastName": "Benz",
+    "location": "61133",
+    "imageLink": "../assets/images/avatars/avatar-fem.png",
+    "rating": "4.2 / 5",
+    "speciality": ["journalism", "banking"],
+    "phone": "+49911288800",
+    "email": "Sophiebenz@test.de"
+  }
+  ,
+
+  {
+    "firstName": "Margarete",
+    "lastName": "Suttner",
+    "location": "60155",
+    "imageLink": "../assets/images/avatars/avatar-fem.png",
+    "rating": "4.5 / 5",
+    "speciality": ["textile", "warehousing"],
+    "phone": "+438934990",
+    "email": "M.Suttner@test.at"
+  }
+  ,
+
+  {
+    "firstName": "Andreas",
+    "lastName": "Bauer",
+    "location": "30151",
+    "imageLink": "../assets/images/avatars/avatar-male.png",
+    "rating": "4.1 / 5",
+    "speciality": ["banking", "civil service"],
+    "phone": "+438934111",
+    "email": "Andreasbauer@test.at"
+  }
+  ,
+
+  {
+    "firstName": "Graham",
+    "lastName": "Bond",
+    "location": "21345",
+    "imageLink": "../assets/images/avatars/avatar-male.png",
+    "rating": "4.7 / 5",
+    "speciality": ["construction", "forestry"],
+    "phone": "+442088047777",
+    "email": "Grahambond@test.co.uk"
+  }
+  ,
+
+  {
+    "firstName": "Susan",
+    "lastName": "Jones",
+    "location": "60213",
+    "imageLink": "../assets/images/avatars/avatar-fem.png",
+    "rating": "4.1 / 5",
+    "speciality": ["agriculture", "healthcare"],
+    "phone": "+442073335100",
+    "email": "S.Jones@test.co.uk"
+  }
 ]

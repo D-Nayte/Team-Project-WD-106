@@ -12,6 +12,7 @@ import { collection, onSnapshot } from "firebase/firestore";
 export const store = createStore(allReducersc());
 
 function Store({ children }) {
+  //Event Listener for Database
   function startDatabaseListener() {
     const lawyerData = collection(database, "lawyers");
     const unionsData = collection(database, "unions");
@@ -41,7 +42,6 @@ function Store({ children }) {
     return onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
         store.dispatch(signInUser(user));
       } else {
         store.dispatch(signOutUser());
@@ -52,7 +52,9 @@ function Store({ children }) {
   useEffect(() => {
     const unsubscribe = startAuthListener();
     const unsubDatabase = startDatabaseListener();
-    return unsubscribe;
+    return () => {
+      unsubscribe(), unsubDatabase();
+    };
   }, []);
 
   return <StoreComponent store={store}>{children}</StoreComponent>;

@@ -1,0 +1,38 @@
+.lawyer_container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--main-orange);
+  border-radius: var(--border-radius);
+  padding: calc(var(--padding) / 2) calc(var(--padding) / 2);
+  font-size: 12px;
+  row-gap: 1rem;
+}
+.lawyer_info_container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+.lawyer_profile_picture {
+  background-size: contain;
+  min-width: 60px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  align-self: flex-start;
+}
+.lawyer_info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.lawyer_info h1 {
+  font-weight: 600;
+}
+
+.lawyer_contact_container a {
+  color: var(--main-orange);
+}
+.lawyer_contact_container {
+  display: flex;
+  justify-content: space-between;
+}

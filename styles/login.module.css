@@ -1,0 +1,43 @@
+.profile_card_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile_card h3 {
+  margin-top: 0.5rem;
+}
+
+.documents_container {
+  color: var(--main-orange);
+}
+
+.documents_container p {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+.documents_container p:first-child {
+  color: var(--main-dark);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.icons {
+  color: rgb(89, 89, 89);
+}
+
+.profileButtons {
+  margin-top: var(--padding);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.welcome {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: var(--padding);
+}
