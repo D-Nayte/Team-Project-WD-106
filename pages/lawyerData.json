@@ -2,93 +2,95 @@
   {
     "firstName": "Max",
     "lastName": "Musterman",
-    "location": "67407",
+    "location": "islington",
     "imageLink": "../assets/images/avatars/avatar-male.png",
     "rating": "4 / 5",
     "speciality": ["insurance", "It industry"],
     "phone": "+49987363837",
-    "email": "test@test.de"
+    "email": "test@test.de",
+    "type": "lawyer"
   },
   {
     "firstName": "Maik",
     "lastName": "Schnullerpuff",
-    "location": "68516",
+    "location": "haringey",
     "imageLink": "../assets/images/avatars/avatar-male.png",
     "rating": "3.5 / 5",
     "speciality": ["insurance", "metall industry"],
     "phone": "+49987363837",
-    "email": "Maik.S@test.de"
-  }
-  ,
+    "email": "Maik.S@test.de",
+    "type": "lawyer"
+  },
 
   {
     "firstName": "Rosa",
     "lastName": "Arendt",
-    "location": "68000",
+    "location": "bromley",
     "imageLink": "../assets/images/avatars/avatar-fem.png",
     "rating": "4.7 / 5",
     "speciality": ["warehousing", "retail"],
     "phone": "+49987363000",
-    "email": "R.Arendt@test.de"
-  }
-  ,
+    "email": "R.Arendt@test.de",
+    "type": "lawyer"
+  },
 
   {
     "firstName": "Sophie",
     "lastName": "Benz",
-    "location": "61133",
+    "location": "wandsworth",
     "imageLink": "../assets/images/avatars/avatar-fem.png",
     "rating": "4.2 / 5",
     "speciality": ["journalism", "banking"],
     "phone": "+49911288800",
-    "email": "Sophiebenz@test.de"
-  }
-  ,
+    "email": "Sophiebenz@test.de",
+    "type": "lawyer"
+  },
 
   {
     "firstName": "Margarete",
     "lastName": "Suttner",
-    "location": "60155",
+    "location": "croydon",
     "imageLink": "../assets/images/avatars/avatar-fem.png",
     "rating": "4.5 / 5",
     "speciality": ["textile", "warehousing"],
     "phone": "+438934990",
-    "email": "M.Suttner@test.at"
-  }
-  ,
+    "email": "M.Suttner@test.at",
+    "type": "lawyer"
+  },
 
   {
     "firstName": "Andreas",
     "lastName": "Bauer",
-    "location": "30151",
+    "location": "hammersmith",
     "imageLink": "../assets/images/avatars/avatar-male.png",
     "rating": "4.1 / 5",
     "speciality": ["banking", "civil service"],
     "phone": "+438934111",
-    "email": "Andreasbauer@test.at"
-  }
-  ,
+    "email": "Andreasbauer@test.at",
+    "type": "lawyer"
+  },
 
   {
     "firstName": "Graham",
     "lastName": "Bond",
-    "location": "21345",
+    "location": "merton",
     "imageLink": "../assets/images/avatars/avatar-male.png",
     "rating": "4.7 / 5",
     "speciality": ["construction", "forestry"],
     "phone": "+442088047777",
-    "email": "Grahambond@test.co.uk"
-  }
-  ,
+    "email": "Grahambond@test.co.uk",
+    "type": "lawyer"
+  },
 
   {
     "firstName": "Susan",
     "lastName": "Jones",
-    "location": "60213",
+    "location": "bracknell",
     "imageLink": "../assets/images/avatars/avatar-fem.png",
     "rating": "4.1 / 5",
     "speciality": ["agriculture", "healthcare"],
     "phone": "+442073335100",
-    "email": "S.Jones@test.co.uk"
+    "email": "S.Jones@test.co.uk",
+    "type": "lawyer"
   }
 ]
