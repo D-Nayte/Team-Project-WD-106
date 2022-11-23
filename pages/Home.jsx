@@ -1,16 +1,26 @@
 import React, { useEffect } from "react";
 import TestForm from "../components/forms/DONTCHANGETHISFORM";
-import json from "./unionsData.json";
+import unions from "./unionsData.json";
+import lawyers from "./lawyerData.json";
 import { collection, addDoc } from "firebase/firestore";
 import { database } from "../auth/fireBase";
 
 function Home() {
-  console.log(json);
-
-  function addToDatabase(section) {
-    json.forEach(async (entry) => {
+  function addLawyers() {
+    lawyers.forEach(async (entry) => {
       try {
-        const docRef = await addDoc(collection(database, section), entry);
+        const docRef = await addDoc(collection(database, "lawyers"), entry);
+        console.log("Document written with ID: ", docRef.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    });
+  }
+
+  function addToDatabase() {
+    unions.forEach(async (entry) => {
+      try {
+        const docRef = await addDoc(collection(database, "unions"), entry);
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {
         console.error("Error adding document: ", e);
@@ -22,7 +32,8 @@ function Home() {
     <>
       <h1>Home</h1>
       <TestForm />
-      <button onClick={() => addToDatabase("unions")}>SEND DATA</button>
+      <button onClick={() => addLawyers()}>Send Lawyers</button>
+      <button onClick={() => addToDatabase()}>send Unions</button>
     </>
   );
 }
