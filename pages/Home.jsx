@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import TestForm from "../components/forms/DONTCHANGETHISFORM";
-import json from "./data.json";
+import json from "./unionsData.json";
 import { collection, addDoc } from "firebase/firestore";
 import { database } from "../auth/fireBase";
 
@@ -22,7 +22,7 @@ function Home() {
     <>
       <h1>Home</h1>
       <TestForm />
-      <button onClick={() => addToDatabase("lawyers")}>SEND DATA</button>
+      <button onClick={() => addToDatabase("unions")}>SEND DATA</button>
     </>
   );
 }
