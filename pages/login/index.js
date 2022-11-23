@@ -9,8 +9,8 @@ import Search from "../../components/forms/Search";
 import { useSelector } from "react-redux";
 import { database } from "../../auth/fireBase";
 import { doc, getDoc } from "firebase/firestore";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { logOut } from "../../auth/userAccess";
 
 function Login() {
   const user = useSelector((state) => state.isLoggedIn);
@@ -57,7 +57,7 @@ function Login() {
     );
 
   return (
-    <div className={styles.login_page}>
+    <main className={styles.login_page}>
       <div className={styles.profile_card}>
         <div className={styles.profile_card_container}>
           <AvatarPicture />
@@ -88,7 +88,7 @@ function Login() {
         showDocuments={showDocuments}
         setShowDocuments={setShowDocuments}
       />
-    </div>
+    </main>
   );
 }
 

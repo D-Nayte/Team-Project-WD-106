@@ -3,6 +3,7 @@
   --main-dark: #2d3e4e;
   --main-orange: #e09e50;
   --main-creme: #ebf0ef;
+  --main-creme-opacity: #ebf0ef9d;
   --padding: 2rem;
   --border-radius: 0.7rem;
   --small-border: 1px solid rgba(0, 0, 0, 0.2);
@@ -65,24 +66,41 @@ body {
   font-size: 1.6rem;
 }
 
+.app-background-container {
+  content: "";
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.app-background-container img {
+  position: absolute;
+  width: 120%;
+  top: 0;
+  left: -10%;
+  background-image: url("../assets//images//background.svg");
+  background-repeat: no-repeat;
+  background-size: 400px 200px;
+  transform-origin: left top;
+  rotate: -10deg;
+}
+
 .APP {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 main {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   padding: 0 calc(var(--padding));
-}
-
-main > p {
-  margin-top: var(--padding);
-  margin-bottom: var(--padding);
 }
 
 .active {
@@ -125,13 +143,14 @@ form {
   flex-direction: column;
   align-items: center;
   padding: calc(var(--padding) / 4);
+  align-self: stretch;
   overflow: hidden;
   row-gap: 0.5rem;
 }
 
 form:after {
   content: "";
-  width: 100%;
+  width: 120%;
   height: 100%;
   position: absolute;
   top: -30%;
@@ -186,12 +205,20 @@ form .submit-btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  transition: all 250ms;
+  padding: var(--padding);
 }
 
 .submit-form {
   display: none;
+}
+
+.submit-form h2 {
+  font-weight: 700;
+  text-align: right;
 }
 
 footer {

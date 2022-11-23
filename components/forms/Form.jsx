@@ -16,7 +16,7 @@ function Forms({ setClassChanger }) {
   }
 
   return (
-    <div className="log-in">
+    <>
       <form onSubmit={handleSubmit}>
         <label>Enter your Email</label>
         <input
@@ -37,7 +37,7 @@ function Forms({ setClassChanger }) {
           </a>
         </p>
       </form>
-    </div>
+    </>
   );
 }
 
