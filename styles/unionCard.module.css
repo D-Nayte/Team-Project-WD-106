@@ -1,0 +1,47 @@
+.union_container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--main-orange);
+  border-radius: var(--border-radius);
+  padding: calc(var(--padding) / 2) calc(var(--padding) / 2);
+  font-size: 12px;
+  row-gap: 1rem;
+}
+.union_info_container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+.union_profile_picture {
+  background-size: contain;
+  min-width: 60px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  align-self: flex-start;
+}
+.union_info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.union_info h1 {
+  font-weight: 700;
+}
+
+.union_contact_container a {
+  color: var(--main-orange);
+}
+.union_contact_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.location span {
+  text-transform: capitalize;
+}

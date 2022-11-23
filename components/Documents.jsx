@@ -3,10 +3,9 @@ import React, { useEffect, useState } from "react";
 import { storage } from "../auth/fireBase";
 import styles from "../styles/documents.module.css";
 
-function Documents({ addClass }) {
+function Documents({ showDocuments, setShowDocuments }) {
   const [documents, setDocuments] = useState(null);
-  const [show, setshow] = useState(false);
-
+  let counter = 0;
   async function getDocuments() {
     try {
       const contracts = ref(storage, `contracts`);
@@ -31,16 +30,20 @@ function Documents({ addClass }) {
     (async () => {
       await getDocuments();
     })();
+    console.log("DOCUMENTS RENDER!!!!");
   }, []);
 
   return (
     <div
-      className={`${addClass}  ${styles.documents_container} ${
-        show ? styles.show : styles.hide
+      className={`  ${styles.documents_container} ${
+        showDocuments ? styles.show : styles.hide
       }`}>
-      {console.log(documents)}
-      {documents && documents.map((doc) => <object data={doc}></object>)}
-      <button onClick={changeShowClass} className="btn">
+      {documents &&
+        documents.map((doc) => {
+          counter += 1;
+          return <object key={counter} data={doc}></object>;
+        })}
+      <button onClick={() => setShowDocuments(false)} className="btn">
         CLOSE
       </button>
     </div>
