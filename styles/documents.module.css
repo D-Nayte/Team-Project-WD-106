@@ -1,0 +1,22 @@
+.documents_container {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  z-index: 2;
+  background-color: gray;
+}
+
+.documents_container object {
+  height: 100vh;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  visibility: hidden;
+  display: none;
+}

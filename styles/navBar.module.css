@@ -1,0 +1,97 @@
+.thisHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 calc(var(--padding));
+  background-color: var(--main-creme);
+  color: var(--main-dark);
+  z-index: 10;
+}
+
+.navStyle a {
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bolder;
+  color: var(--main-dark);
+}
+
+.navStyle a:hover {
+  color: var(--main-orange);
+}
+
+.thisHeader .navBtn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--main-dark);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+}
+
+.thisHeader div nav {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  .thisHeader .navBtn {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .navStyle {
+    white-space: nowrap;
+    min-width: fit-content;
+  }
+
+  .logoHeader {
+    padding: 0%;
+  }
+
+  .thisHeader nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-width: fit-content;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: var(--mainColor);
+    transition: 1s;
+    transform: translateY(-100vh);
+    background-color: var(--main-creme);
+    color: var(--main-dark);
+    z-index: 10;
+  }
+
+  .thisHeader .responsiveNav {
+    transform: none;
+  }
+
+  .navStyle .navCloseBtn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .navStyle a {
+    font-size: 1.5rem;
+  }
+}
+
+.faBars {
+  visibility: hidden;
+}
+
+.logo {
+  width: 20%;
+  height: 20%;
+}

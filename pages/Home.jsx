@@ -1,29 +1,19 @@
-import React, { useEffect } from "react";
-import TestForm from "../components/forms/DONTCHANGETHISFORM";
-import json from "./data.json";
-import { collection, addDoc } from "firebase/firestore";
-import { database } from "../auth/fireBase";
+import React, { useEffect, useState } from "react";
+import Form from "../components/forms/Form";
+import Submit from "../components/forms/Submit";
 
 function Home() {
-  console.log(json);
-
-  function addToDatabase(section) {
-    json.forEach(async (entry) => {
-      try {
-        const docRef = await addDoc(collection(database, section), entry);
-        console.log("Document written with ID: ", docRef.id);
-      } catch (e) {
-        console.error("Error adding document: ", e);
-      }
-    });
-  }
+  const [classChanger, setClassChanger] = useState("");
 
   return (
-    <>
-      <h1>Home</h1>
-      <TestForm />
-      <button onClick={() => addToDatabase("lawyers")}>SEND DATA</button>
-    </>
+    <main>
+      <Form setClassChanger={setClassChanger} />
+      <p>
+        If you need professional help from our experts please do not hesitate to
+        sign up.
+      </p>
+      <Submit classChanger={classChanger} />
+    </main>
   );
 }
 
