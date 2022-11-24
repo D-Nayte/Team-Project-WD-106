@@ -19,37 +19,38 @@ function Login() {
   const [noUser, setNoUser] = useState(true);
   const [showDocuments, setShowDocuments] = useState(false);
 
-  async function verifyUser() {
-    if (!user) return setLoading(false);
-    setNoUser(false);
-    setLoading(false);
-    return user;
-  }
+  // async function verifyUser() {
+  //   if (!user) return setLoading(false);
+  //   setNoUser(false);
+  //   setLoading(false);
+  //   return user;
+  // }
 
   async function getUserName() {
     if (user) {
       const id = user.uid;
       const docRef = doc(database, "user-data", id);
       const docSnap = await getDoc(docRef);
-      setLoading(false);
-      setNoUser(false);
       if (docSnap) {
         setUserName(`${docSnap.data()?.firstName} ${docSnap.data()?.lastName}`);
-        return docSnap;
+        docSnap;
       }
     }
+    setLoading(false);
   }
 
   useEffect(() => {
     console.log("showDocuments", showDocuments);
   }, [showDocuments]);
+
   useEffect(() => {
+    setNoUser(user);
     getUserName();
-    verifyUser();
+    // verifyUser();
   }, [user]);
 
   if (loading) return "loading....";
-  if (noUser)
+  if (!noUser)
     return (
       <h1>
         You must be logged in!! <Link href="/">go back</Link>
@@ -75,6 +76,7 @@ function Login() {
           Email: {user?.email ? user?.email : "no Email"}
         </h3>
       </div>
+      <button onClick={logOut}>LOGOUT</button>
       <div className={styles.profileButtons}>
         <ProfileButton title="Messages" />
         <ProfileButton setShowDocuments={setShowDocuments} title="Documents" />

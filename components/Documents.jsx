@@ -1,19 +1,23 @@
-import { getDownloadURL, listAll, ref } from "firebase/storage";
+import { getDownloadURL, getMetadata, listAll, ref } from "firebase/storage";
 import React, { useEffect, useState } from "react";
 import { storage } from "../auth/fireBase";
 import styles from "../styles/documents.module.css";
+import { GrDocumentPdf } from "react-icons/gr";
 
 function Documents({ showDocuments, setShowDocuments }) {
   const [documents, setDocuments] = useState(null);
   let counter = 0;
+
   async function getDocuments() {
     try {
       const contracts = ref(storage, `contracts`);
       const list = await listAll(contracts);
+      console.log(list);
       const documents = Promise.all(
         list.items.map(async (itemRef) => {
+          const meta = await getMetadata(itemRef);
           const url = await getDownloadURL(itemRef);
-          return url;
+          return { url: url, meta: meta.name };
         })
       );
       setDocuments(await documents);
@@ -22,6 +26,7 @@ function Documents({ showDocuments, setShowDocuments }) {
       console.log("Unable to fetch documents: ");
     }
   }
+
   function changeShowClass() {
     setshow((state) => !state);
   }
@@ -30,19 +35,30 @@ function Documents({ showDocuments, setShowDocuments }) {
     (async () => {
       await getDocuments();
     })();
-    console.log("DOCUMENTS RENDER!!!!");
   }, []);
+
+  if (!documents) return <h2>Loading....</h2>;
 
   return (
     <div
       className={`  ${styles.documents_container} ${
         showDocuments ? styles.show : styles.hide
       }`}>
-      {documents &&
-        documents.map((doc) => {
-          counter += 1;
-          return <object key={counter} data={doc}></object>;
-        })}
+      <div className={styles.docs_container}>
+        {documents &&
+          documents.map((doc) => {
+            console.log(doc);
+            counter += 1;
+            return (
+              <p>
+                <span>
+                  <GrDocumentPdf />
+                </span>
+                <a href={doc.url}>{doc.meta}</a>
+              </p>
+            );
+          })}
+      </div>
       <button onClick={() => setShowDocuments(false)} className="btn">
         CLOSE
       </button>
