@@ -55,3 +55,16 @@
   margin-top: var(--padding);
   text-align: center;
 }
+
+@media (min-width: 768px) {
+  .main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "profile profile profile profile "
+      "form unions unions lawyers lawyers"
+      "form unions unions lawyers lawyers"
+      "form unions unions lawyers lawyers";
+  }
+}
