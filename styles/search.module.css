@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../assets//images/groupPicture-blue.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 180%;
+  flex-grow: 1;
+}
+
+.background {
+  position: absolute;
+  width: 100vw;
+  object-position: center center;
+  object-fit: cover;
+  overflow: hidden;
+}

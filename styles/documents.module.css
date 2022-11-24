@@ -1,6 +1,7 @@
 .documents_container {
   position: fixed;
   top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
   flex-direction: column;
@@ -19,4 +20,28 @@
 .hide {
   visibility: hidden;
   display: none;
+}
+
+.docs_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.docs_container p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-dark);
+}
+
+.docs_container span {
+  color: var(--main-dark);
+  font-size: 4rem;
+}
+.docs_container a {
+  color: var(--main-orange);
 }

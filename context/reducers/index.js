@@ -24,8 +24,18 @@ function isLoggedIn(state = null, action) {
   }
 }
 
+function messages(state = null, action) {
+  switch (action.type) {
+    case "SET_MESSAGES":
+      return (state = action.payload);
+
+    default:
+      return state;
+  }
+}
+
 export default function allReducers() {
-  return combineReducers({ companyData, isLoggedIn });
+  return combineReducers({ companyData, isLoggedIn, messages });
 }
 
 //Redux examples

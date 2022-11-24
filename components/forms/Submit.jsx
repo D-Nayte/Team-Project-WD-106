@@ -3,7 +3,7 @@ import { createUser } from "../../auth/userAccess";
 import noAvatarPicture from "../../assets/images/avatars/noAvatar.png";
 import { useRouter } from "next/router";
 
-function Submit({ classChanger }) {
+function Submit({ classChanger, setClassChanger }) {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const confirmedPasswordRef = useRef("");
@@ -41,11 +41,14 @@ function Submit({ classChanger }) {
     }
 
     const user = await createUser(firstName, lastName, email, password, avatar);
+    if (user.noUser) return console.log(user.error);
+
     router.push("/login");
   }
 
   return (
     <div className={`submit-form ${classChanger}`}>
+      <h2 onClick={() => setClassChanger("")}>X</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstname">Firstname</label>
         <input

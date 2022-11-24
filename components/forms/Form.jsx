@@ -11,13 +11,13 @@ function Forms({ setClassChanger }) {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    console.log(email, password);
     const user = await logInUser(email, password);
+    if (user.noUser) return console.log(user.error);
     router.push("/login");
   }
 
   return (
-    <div className="log-in">
+    <>
       <form onSubmit={handleSubmit}>
         <label>Enter your Email</label>
         <input
@@ -28,6 +28,7 @@ function Forms({ setClassChanger }) {
         <label>Enter your Password</label>
         <input
           type="password"
+          minLength="6"
           ref={passwordRef}
           placeholder="Enter your Password"></input>
         <button className="btn">Sign In</button>
@@ -38,7 +39,7 @@ function Forms({ setClassChanger }) {
           </a>
         </p>
       </form>
-    </div>
+    </>
   );
 }
 

@@ -2,16 +2,15 @@ import { useRef, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import style from "../../styles/navBar.module.css";
 import LogoTeamWork from "../../assets/images/Logo-team-work.svg";
-import Popup from "../../components/navbar/navbarPopup.js";
+import { useRouter } from "next/router";
 
 function Navbar() {
   const navRef = useRef();
+  const route = useRouter();
 
   const showNavbar = () => {
     navRef.current.classList.toggle(`${style.responsiveNav}`);
   };
-
-  const [buttonPopup, setButtonPopup] = useState(false);
 
   return (
     <header className={style.thisHeader}>
@@ -20,6 +19,7 @@ function Navbar() {
           className={style.logo}
           src={LogoTeamWork.src}
           alt="Logo-team-work"
+          onClick={() => route.push("/")}
         />
       </h3>
       <nav className={style.navStyle} ref={navRef}>
@@ -32,15 +32,12 @@ function Navbar() {
         <a className={style.aLink} href="/#">
           Contact
         </a>
-        <button onClick={() => setButtonPopup(true)}>
-          Sign In
-        </button>
-        <Popup trigger={buttonPopup}>the form component will go here and i need css!!!!!</Popup>
-        <button className={`${style.navBtn} ${style.
-          navCloseBtn}`} onClick={showNavbar}>
+        <button
+          className={`${style.navBtn} ${style.navCloseBtn}`}
+          onClick={showNavbar}>
           <FaTimes />
         </button>
-        <FaBars className={style.faBars}/>
+        <FaBars className={style.faBars} />
       </nav>
       <button className={style.navBtn} onClick={showNavbar}>
         <FaBars />

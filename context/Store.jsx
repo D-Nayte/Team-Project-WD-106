@@ -4,7 +4,11 @@ import { Provider as StoreComponent, useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../auth/fireBase";
 import { signInUser, signOutUser } from "../context/actions/signInUser";
-import { changeLawyers, changeUnions } from "../context/actions/compActions";
+import {
+  changeLawyers,
+  changeUnions,
+  addMessages,
+} from "../context/actions/compActions";
 import React, { useEffect } from "react";
 import { database } from "../auth/fireBase";
 import { collection, onSnapshot } from "firebase/firestore";
@@ -16,6 +20,7 @@ function Store({ children }) {
   function startDatabaseListener() {
     const lawyerData = collection(database, "lawyers");
     const unionsData = collection(database, "unions");
+    const messages = collection(database, "messages");
 
     const unsubLawyers = onSnapshot(lawyerData, (docs) => {
       const newLawyers = [];
@@ -31,9 +36,17 @@ function Store({ children }) {
       });
       store.dispatch(changeUnions(newUnions));
     });
+    const unsubMessages = onSnapshot(messages, (docs) => {
+      const newMessages = [];
+      docs.forEach((doc) => {
+        newMessages.push({ message: doc.data(), id: doc.id });
+      });
+      store.dispatch(addMessages(newMessages));
+    });
     return function unsubDatabase() {
-      unsubUnions();
-      unsubLawyers();
+      unsubUnions;
+      unsubLawyers;
+      unsubMessages;
     };
   }
 

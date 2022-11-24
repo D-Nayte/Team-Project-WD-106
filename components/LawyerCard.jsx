@@ -2,6 +2,7 @@ import React from "react";
 import style from "../styles/lawyerCard.module.css";
 import avatarMale from "../assets/images/avatars/avatar-male.png";
 import avatarFemale from "../assets/images/avatars/avatar-fem.png";
+import { capitalizaFirstCahr } from "../lib/capitalizer";
 
 function LawyerCard({
   dataBaseItem = {
@@ -16,13 +17,6 @@ function LawyerCard({
 }) {
   const { firstName, lastName, imageLink, speciality, phone, gender, email } =
     dataBaseItem;
-
-  function capitalizaFirstCahr(array) {
-    return array
-      .map((entry) => entry.charAt(0).toUpperCase() + entry.slice(1))
-      .toString()
-      .replace(",", ", ");
-  }
 
   return (
     <article className={style.lawyer_container}>
