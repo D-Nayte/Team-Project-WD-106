@@ -33,7 +33,7 @@ export async function createUser(
     } else if (error.code == "auth/weak-password") {
       alert("The password is too weak.");
     }
-    return;
+    return { error: error, noUser: true };
   }
 }
 
@@ -52,7 +52,7 @@ export async function logInUser(email = "tes12t@test.de", password = "123456") {
     } else if (error.code == "auth/weak-password") {
       alert("The password is too weak.");
     }
-    return error;
+    return { error: error, noUser: true };
   }
 }
 

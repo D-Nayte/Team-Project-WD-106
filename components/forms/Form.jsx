@@ -12,6 +12,7 @@ function Forms({ setClassChanger }) {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const user = await logInUser(email, password);
+    if (user.noUser) return console.log(user.error);
     router.push("/login");
   }
 
@@ -27,6 +28,7 @@ function Forms({ setClassChanger }) {
         <label>Enter your Password</label>
         <input
           type="password"
+          minLength="6"
           ref={passwordRef}
           placeholder="Enter your Password"></input>
         <button className="btn">Sign In</button>

@@ -12,7 +12,6 @@ function Documents({ showDocuments, setShowDocuments }) {
     try {
       const contracts = ref(storage, `contracts`);
       const list = await listAll(contracts);
-      console.log(list);
       const documents = Promise.all(
         list.items.map(async (itemRef) => {
           const meta = await getMetadata(itemRef);
@@ -47,7 +46,6 @@ function Documents({ showDocuments, setShowDocuments }) {
       <div className={styles.docs_container}>
         {documents &&
           documents.map((doc) => {
-            console.log(doc);
             counter += 1;
             return (
               <p>

@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Form from "../components/forms/Form";
 import Submit from "../components/forms/Submit";
-import Search from "./search";
 import styles from "../styles/homePage.module.css";
 import background from "../assets/images/groupPicture-blue.jpg";
 
@@ -15,7 +14,7 @@ function Home() {
   async function verifyUser() {
     if (user)
       return setTimeout(() => {
-        Router.push("/login");
+        router.push("/login");
       }, 2000);
 
     return user;

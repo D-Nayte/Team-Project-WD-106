@@ -11,3 +11,10 @@ export function changeUnions(payload) {
     payload: payload,
   };
 }
+
+export function addMessages(payload) {
+  return {
+    type: "SET_MESSAGES",
+    payload: payload,
+  };
+}

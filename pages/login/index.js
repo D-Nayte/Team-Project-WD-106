@@ -11,20 +11,16 @@ import { database } from "../../auth/fireBase";
 import { doc, getDoc } from "firebase/firestore";
 import Link from "next/link";
 import { logOut } from "../../auth/userAccess";
+import Messages from "../../components/messages";
 
 function Login() {
   const user = useSelector((state) => state.isLoggedIn);
+  const DATA = useSelector((state) => state);
   const [userName, setUserName] = useState("no Name Found");
   const [loading, setLoading] = useState(true);
   const [noUser, setNoUser] = useState(true);
   const [showDocuments, setShowDocuments] = useState(false);
-
-  // async function verifyUser() {
-  //   if (!user) return setLoading(false);
-  //   setNoUser(false);
-  //   setLoading(false);
-  //   return user;
-  // }
+  const [showMessages, setShowMessages] = useState(false);
 
   async function getUserName() {
     if (user) {
@@ -40,13 +36,8 @@ function Login() {
   }
 
   useEffect(() => {
-    console.log("showDocuments", showDocuments);
-  }, [showDocuments]);
-
-  useEffect(() => {
     setNoUser(user);
     getUserName();
-    // verifyUser();
   }, [user]);
 
   if (loading) return "loading....";
@@ -58,7 +49,7 @@ function Login() {
     );
 
   return (
-    <main className={styles.login_page}>
+    <main className={styles.overview}>
       <div className={styles.profile_card}>
         <div className={styles.profile_card_container}>
           <AvatarPicture />
@@ -78,8 +69,8 @@ function Login() {
       </div>
       <button onClick={logOut}>LOGOUT</button>
       <div className={styles.profileButtons}>
-        <ProfileButton title="Messages" />
-        <ProfileButton setShowDocuments={setShowDocuments} title="Documents" />
+        <ProfileButton showContent={setShowMessages} title="Messages" />
+        <ProfileButton showContent={setShowDocuments} title="Documents" />
         <ProfileButton title="contacts" />
       </div>
       <h2 className={styles.welcome}>
@@ -90,6 +81,7 @@ function Login() {
         showDocuments={showDocuments}
         setShowDocuments={setShowDocuments}
       />
+      <Messages showMessages={showMessages} setShowMessages={setShowMessages} />
     </main>
   );
 }

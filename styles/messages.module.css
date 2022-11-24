@@ -1,0 +1,136 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(216, 216, 216, 0.603);
+  backdrop-filter: blur(5px);
+  overflow: auto;
+  padding: calc(var(--padding) / 2) var(--padding);
+  align-items: center;
+  z-index: 200;
+}
+
+.overview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(216, 216, 216, 0.603);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
+  padding: calc(var(--padding) / 2) var(--padding);
+  align-items: center;
+  z-index: 10;
+}
+
+.overview_button {
+  width: 100%;
+  text-align: right;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  column-gap: 2rem;
+  margin-top: 1rem;
+}
+
+.overview button {
+  background-color: transparent;
+  align-self: flex-start;
+  border: none;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.container h2 {
+  color: var(--main-orange);
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.container h2 span {
+  font-size: 1.5rem;
+  border-bottom: 4px solid var(--main-dark);
+  border-radius: 10%;
+}
+
+.container p {
+  font-weight: 600;
+}
+
+.icon_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  transition: all 200ms;
+}
+
+.icon_container::after {
+  content: attr(data-msg) " ";
+  position: absolute;
+  color: black;
+  overflow: auto;
+  top: 80%;
+  left: -50%;
+  margin: var(--padding);
+  margin-left: -62.5%;
+  padding: var(--padding);
+  height: 0;
+  width: 0;
+  border-radius: var(--border-radius);
+  transition: all 200ms;
+  background-color: var(--main-dark);
+  color: var(--main-orange);
+  transition: all 200ms;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.icon_container:hover::after,
+.icon_container:focus::after {
+  content: attr(data-msg) " ";
+  position: fixed;
+  color: black;
+  overflow: auto;
+  top: 5%;
+  left: 0;
+  margin: var(--padding);
+  padding: var(--padding);
+  height: 50vh;
+  width: 80%;
+  border-radius: var(--border-radius);
+  transition: all 200ms;
+  background-color: var(--main-dark);
+  color: var(--main-orange);
+  opacity: 100;
+  pointer-events: all;
+}
+
+.icon_container i {
+  font-size: 3.5rem;
+}
+
+.icon_container h3 {
+  font-size: 1.2rem;
+}

@@ -41,6 +41,8 @@ function Submit({ classChanger, setClassChanger }) {
     }
 
     const user = await createUser(firstName, lastName, email, password, avatar);
+    if (user.noUser) return console.log(user.error);
+
     router.push("/login");
   }
 
