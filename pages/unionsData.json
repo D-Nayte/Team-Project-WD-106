@@ -5,7 +5,8 @@
     "buisnesss": ["metall", "textile"],
     "phone": "+49987363837",
     "email": "hj.metall@mail.com",
-    "location": "67407"
+    "location": "67407",
+    "type": "union"
   },
   {
     "companyName": "UNISON",
@@ -19,7 +20,8 @@
     ],
     "phone": "+4402088284462",
     "email": "office@unison.com",
-    "location": "london"
+    "location": "london",
+    "type": "union"
   },
   {
     "companyName": "GMB",
@@ -33,7 +35,8 @@
     ],
     "phone": "+4402088145000",
     "email": "office@gmb.com",
-    "location": "manchester"
+    "location": "manchester",
+    "type": "union"
   },
   {
     "companyName": "Unite",
@@ -41,7 +44,8 @@
     "buisnesss": ["banking", "finance", "administration", "insurance"],
     "phone": "+4402088144999",
     "email": "contact@unite.com",
-    "location": "Leeds–Bradford"
+    "location": "Leeds–Bradford",
+    "type": "union"
   },
   {
     "companyName": "USDAW",
@@ -55,7 +59,8 @@
     ],
     "phone": "+4401482888444",
     "email": "contact@usdaw.com",
-    "location": "Glasgow"
+    "location": "Glasgow",
+    "type": "union"
   },
   {
     "companyName": "USDAW",
@@ -69,7 +74,8 @@
     ],
     "phone": "+4401482888444",
     "email": "contact@usdaw.com",
-    "location": "Bristol"
+    "location": "Bristol",
+    "type": "union"
   },
   {
     "companyName": "DGB",
@@ -83,7 +89,8 @@
     ],
     "phone": "+49987364444",
     "email": "kontaktiere@dgb.com",
-    "location": "Liverpool"
+    "location": "Liverpool",
+    "type": "union"
   },
   {
     "companyName": "IG Metall",
@@ -91,7 +98,8 @@
     "buisnesss": ["metall", "forestry", "warehousing"],
     "phone": "+49982225187",
     "email": "kontaktiere@igmetall.com",
-    "location": "Manchester"
+    "location": "Manchester",
+    "type": "union"
   },
   {
     "companyName": "GBH",
@@ -99,7 +107,8 @@
     "buisnesss": ["construction", "forestry", "carpentry", "metall"],
     "phone": "+4306642143001",
     "email": "kontaktiere@gbh.com",
-    "location": "Sheffield"
+    "location": "Sheffield",
+    "type": "union"
   },
   {
     "companyName": "GPA",
@@ -107,6 +116,7 @@
     "buisnesss": ["journalism", "healthcare", "education", "culture"],
     "phone": "+4306642143333",
     "email": "kontaktiere@gpa.com",
-    "location": "Bradford"
+    "location": "Bradford",
+    "type": "union"
   }
 ]
