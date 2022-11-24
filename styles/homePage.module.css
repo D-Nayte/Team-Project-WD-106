@@ -32,3 +32,39 @@
 .main form {
   margin-bottom: var(--padding) !important;
 }
+
+@media (min-width: 768px) {
+  .main {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header header . . "
+      "intro intro intro form form";
+  }
+
+  .main > h2:first-child {
+    grid-area: header;
+    width: 100%;
+    text-align: center;
+    font-size: 4.5rem;
+    translate: 0 -50px;
+  }
+
+  .main > h2:nth-of-type(2) {
+    font-size: 3.5rem;
+    grid-area: intro;
+    font-weight: 800;
+  }
+
+  .background {
+    display: none;
+  }
+
+  .main form {
+    grid-area: form;
+    font-size: 1.8rem;
+    gap: 1rem;
+  }
+}

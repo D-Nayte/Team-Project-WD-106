@@ -227,3 +227,17 @@ footer {
   border: 2px solid;
   color: rgba(255, 255, 255, 0.3);
 }
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("../assets/images/groupPicture-green.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center bottom;
+  }
+
+  form input,
+  form select {
+    font-size: 2rem;
+  }
+}
