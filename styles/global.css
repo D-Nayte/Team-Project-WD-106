@@ -87,6 +87,10 @@ body {
   rotate: -10deg;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 .APP {
   height: 100vh;
   position: relative;

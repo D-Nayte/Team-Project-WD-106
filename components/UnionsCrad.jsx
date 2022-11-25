@@ -20,9 +20,13 @@ function UnionsCrad({ union }) {
         <div className={style.union_info}>
           <h1>{companyName && companyName}</h1>
           <p className={style.description}>{description}</p>
-          <p>Specialist in: {capitalizaFirstCahr(buisnesss)}</p>
+          <p>
+            <span className="bold">Specialist in: </span>
+            {capitalizaFirstCahr(buisnesss)}
+          </p>
           <p className={style.location}>
-            Location: <span>{location}</span>
+            <span className="bold">Location:</span>
+            <span> {location}</span>
           </p>
         </div>
       </div>

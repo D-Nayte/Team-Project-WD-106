@@ -9,9 +9,8 @@ function Search() {
   const [unionsBuisness, setUnionsBuisness] = useState([]);
   const [cityList, setCItyList] = useState(new Set());
   const [showResults, setShowResults] = useState(false);
-  const [filteredData, setFilteredData] = useState({});
-  let filteredUnions = [];
-  let filteredLawyers = [];
+  const [filteredLawyers, setFilteredLawyers] = useState({});
+  const [filteredUnions, setFilteredUnion] = useState({});
 
   function getAllLawyerProblems() {
     const lawyersProblemsList = new Set();
@@ -41,23 +40,17 @@ function Search() {
   }
 
   function searchUnions(selectedBuisness) {
-    filteredUnions = [];
-
     const result = unionsData.filter((union) =>
       union.buisnesss.find((buisness) => buisness === selectedBuisness)
     );
-    filteredUnions.push(...result);
-    updateSearchState();
+    setFilteredUnion((old) => (old = result));
   }
 
   function searchLawyers(selectedProblems) {
-    filteredLawyers = [];
-
     const result = lawyersData.filter((lawyer) =>
       lawyer.problems.find((problem) => problem === selectedProblems)
     );
-    filteredLawyers.push(...result);
-    updateSearchState();
+    setFilteredLawyers((old) => (old = result));
   }
 
   function handleSubmit(event) {
@@ -65,17 +58,7 @@ function Search() {
     setShowResults(true);
   }
 
-  function updateSearchState() {
-    setFilteredData(
-      (old) =>
-        (old = {
-          lawyerList: [...filteredLawyers],
-          unionList: [...filteredUnions],
-        })
-    );
-  }
-
-  const test = { test: 1, test: 2 };
+  useEffect(() => {}, [filteredLawyers]);
 
   useEffect(() => {
     getAllLawyerProblems();
@@ -129,7 +112,8 @@ function Search() {
       <SearchResults
         setShowResults={setShowResults}
         showResults={showResults}
-        lists={filteredData}
+        filteredLawyers={filteredLawyers}
+        filteredUnions={filteredUnions}
       />
     </div>
   );

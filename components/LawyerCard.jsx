@@ -4,19 +4,9 @@ import avatarMale from "../assets/images/avatars/avatar-male.png";
 import avatarFemale from "../assets/images/avatars/avatar-fem.png";
 import { capitalizaFirstCahr } from "../lib/capitalizer";
 
-function LawyerCard({
-  dataBaseItem = {
-    firstName: "Max",
-    lastName: "Musterman",
-    imageLink: "../assets/images/avatars/avatar-male.png",
-    speciality: ["insurance", "It industry"],
-    phone: "+49987363837",
-    email: "test@test.de",
-    gender: "male",
-  },
-}) {
-  const { firstName, lastName, imageLink, speciality, phone, gender, email } =
-    dataBaseItem;
+function LawyerCard({ lawyer }) {
+  const { firstName, lastName, phone, gender, email, speciality } =
+    lawyer && lawyer;
 
   return (
     <article className={style.lawyer_container}>
@@ -35,7 +25,10 @@ function LawyerCard({
           <h1>
             {firstName} {lastName}
           </h1>
-          <p>Specialist in : {capitalizaFirstCahr(speciality)}</p>
+          <p>
+            <span className="bold">Specialist in :</span>{" "}
+            {capitalizaFirstCahr(speciality)}
+          </p>
         </div>
       </div>
       <div className={style.lawyer_contact_container}>

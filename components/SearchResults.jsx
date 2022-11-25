@@ -5,10 +5,14 @@ import LawyerCard from "./LawyerCard";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 
-function SearchResults({ lists, showResults, setShowResults }) {
+function SearchResults({
+  filteredLawyers,
+  filteredUnions,
+  showResults,
+  setShowResults,
+}) {
   const user = useSelector((state) => state.isLoggedIn);
   const router = useRouter();
-  const { lawyerList, unionList } = lists && lists;
   if (!user) return redirectUser();
 
   function redirectUser() {
@@ -18,9 +22,9 @@ function SearchResults({ lists, showResults, setShowResults }) {
     return <h1>You must be logged in!</h1>;
   }
 
-  if (!showResults || (!lawyerList && !unionList)) return null;
+  if (!showResults || (!filteredLawyers && !filteredUnions)) return null;
 
-  if (lawyerList.lenght < 1 && unionList < 1)
+  if (filteredLawyers.lenght < 1 && filteredUnions < 1)
     return (
       <div className={styles.container}>
         <h1>NO RESULTS</h1>
@@ -30,18 +34,20 @@ function SearchResults({ lists, showResults, setShowResults }) {
   return (
     <div className={styles.container}>
       <h1>Search results</h1>
-      {unionList &&
-        unionList.map((union) => (
-          <div key={union.companyName}>
-            <UnionsCrad union={union} />
-          </div>
-        ))}
-      {lawyerList &&
-        lawyerList.map((lawyer) => (
-          <div key={lawyer.companyName}>
-            <LawyerCard lawyer={lawyer} />
-          </div>
-        ))}
+      {filteredUnions.length >= 1
+        ? filteredUnions.map((union) => (
+            <div key={union.companyName}>
+              <UnionsCrad union={union} />
+            </div>
+          ))
+        : null}
+      {filteredLawyers.length >= 1
+        ? filteredLawyers.map((lawyer) => (
+            <div key={lawyer.companyName}>
+              <LawyerCard lawyer={lawyer} />
+            </div>
+          ))
+        : null}
       <button onClick={() => setShowResults(false)} className="btn">
         close
       </button>

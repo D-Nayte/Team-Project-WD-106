@@ -67,7 +67,6 @@ function Login() {
           Email: {user?.email ? user?.email : "no Email"}
         </h3>
       </div>
-      <button onClick={logOut}>LOGOUT</button>
       <div className={styles.profileButtons}>
         <ProfileButton showContent={setShowMessages} title="Messages" />
         <ProfileButton showContent={setShowDocuments} title="Documents" />

@@ -7,6 +7,7 @@
   font-size: 12px;
   row-gap: 1rem;
   background-color: whitesmoke;
+  font-weight: 600;
 }
 .union_info_container {
   display: flex;
@@ -20,6 +21,7 @@
   border-radius: 50%;
   align-self: flex-start;
 }
+
 .union_info {
   display: flex;
   flex-direction: column;
