@@ -8,7 +8,8 @@
     "speciality": ["insurance", "It industry"],
     "phone": "+49987363837",
     "email": "test@test.de",
-    "type": "lawyer"
+    "type": "lawyer",
+    "problems": ["salary,bullying"]
   },
   {
     "firstName": "Maik",
@@ -19,7 +20,8 @@
     "speciality": ["insurance", "metall industry"],
     "phone": "+49987363837",
     "email": "Maik.S@test.de",
-    "type": "lawyer"
+    "type": "lawyer",
+    "problems": ["salary,severance pay"]
   },
 
   {
@@ -31,7 +33,8 @@
     "speciality": ["warehousing", "retail"],
     "phone": "+49987363000",
     "email": "R.Arendt@test.de",
-    "type": "lawyer"
+    "type": "lawyer",
+    "problems": ["insurance,severance pay"]
   },
 
   {
@@ -43,7 +46,8 @@
     "speciality": ["journalism", "banking"],
     "phone": "+49911288800",
     "email": "Sophiebenz@test.de",
-    "type": "lawyer"
+    "type": "lawyer",
+    "problems": ["injuries at work,salary"]
   },
 
   {
@@ -55,7 +59,8 @@
     "speciality": ["textile", "warehousing"],
     "phone": "+438934990",
     "email": "M.Suttner@test.at",
-    "type": "lawyer"
+    "type": "lawyer",
+    "problems": ["injuries at work,salary"]
   },
 
   {
@@ -67,7 +72,8 @@
     "speciality": ["banking", "civil service"],
     "phone": "+438934111",
     "email": "Andreasbauer@test.at",
-    "type": "lawyer"
+    "type": "lawyer",
+    "problems": ["severance pay,insurance"]
   },
 
   {
@@ -79,7 +85,8 @@
     "speciality": ["construction", "forestry"],
     "phone": "+442088047777",
     "email": "Grahambond@test.co.uk",
-    "type": "lawyer"
+    "type": "lawyer",
+    "problems": ["insurance,injuryies at work"]
   },
 
   {
@@ -91,6 +98,7 @@
     "speciality": ["agriculture", "healthcare"],
     "phone": "+442073335100",
     "email": "S.Jones@test.co.uk",
-    "type": "lawyer"
+    "type": "lawyer",
+    "problems": ["bullying,salary"]
   }
 ]
