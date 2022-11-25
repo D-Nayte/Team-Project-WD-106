@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 
-
 function Search() {
+  const unionsData = useSelector((storage) => storage.companyData.unions);
+  const lawyersData = useSelector((storage) => storage.companyData.lawyers);
 
-const unionsData= useSelector((storage) => storage.companyData.unions);
+  function getAllLawyerProblems() {
+    if (lawyersData) {
+      const problemsList = lawyersData.map((lawyer) => {
+        return lawyer.problems;
+      });
 
-const lawyersData = useSelector((storage) => storage.companyData.lawyers);
-console.log(unionsData);
+      console.log(problemsList[0]);
+    }
+  }
+
+  useEffect(() => {
+    getAllLawyerProblems();
+  }, [lawyersData, unionsData]);
 
   return (
     <div>

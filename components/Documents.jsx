@@ -48,7 +48,7 @@ function Documents({ showDocuments, setShowDocuments }) {
           documents.map((doc) => {
             counter += 1;
             return (
-              <p>
+              <p key={counter}>
                 <span>
                   <GrDocumentPdf />
                 </span>

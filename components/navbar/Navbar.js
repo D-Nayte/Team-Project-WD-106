@@ -26,7 +26,6 @@ function Navbar() {
           onClick={() => route.push("/")}
         />
       </h3>
-      {console.log("user", user)}
       <nav className={style.navStyle} ref={navRef}>
         <a
           className={style.aLink}
