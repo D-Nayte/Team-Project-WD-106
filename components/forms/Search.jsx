@@ -5,9 +5,11 @@ import SearchResults from "../SearchResults";
 function Search() {
   const unionsData = useSelector((storage) => storage.companyData.unions);
   const lawyersData = useSelector((storage) => storage.companyData.lawyers);
+
   const [lawyerProblems, setLawyerProblems] = useState([]);
   const [unionsBuisness, setUnionsBuisness] = useState([]);
   const [cityList, setCItyList] = useState(new Set());
+
   const [showResults, setShowResults] = useState(false);
   const [filteredLawyers, setFilteredLawyers] = useState({});
   const [filteredUnions, setFilteredUnion] = useState({});
@@ -16,7 +18,7 @@ function Search() {
     const lawyersProblemsList = new Set();
     if (lawyersData) {
       lawyersData.forEach((lawyer) => {
-        setCItyList((old) => old.add(lawyer.location.toLowerCase()));
+        // setCItyList((old) => old.add(lawyer.location.toLowerCase()));
         return lawyer.problems.forEach((problem) =>
           lawyersProblemsList.add(problem)
         );
