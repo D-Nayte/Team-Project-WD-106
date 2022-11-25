@@ -1,12 +1,14 @@
 .documents_container {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   flex-direction: column;
+  display: flex;
   z-index: 2;
-  background-color: gray;
+  background-color: rgba(216, 216, 216, 0.603);
+  backdrop-filter: blur(5px);
 }
 
 .documents_container object {
@@ -27,7 +29,7 @@
   height: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .docs_container p {
@@ -43,5 +45,5 @@
   font-size: 4rem;
 }
 .docs_container a {
-  color: var(--main-orange);
+  color: var(--main-dark);
 }

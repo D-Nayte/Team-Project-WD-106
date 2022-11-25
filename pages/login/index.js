@@ -12,10 +12,10 @@ import { doc, getDoc } from "firebase/firestore";
 import Link from "next/link";
 import { logOut } from "../../auth/userAccess";
 import Messages from "../../components/messages";
+import SearchResults from "../../components/SearchResults";
 
 function Login() {
   const user = useSelector((state) => state.isLoggedIn);
-  const DATA = useSelector((state) => state);
   const [userName, setUserName] = useState("no Name Found");
   const [loading, setLoading] = useState(true);
   const [noUser, setNoUser] = useState(true);

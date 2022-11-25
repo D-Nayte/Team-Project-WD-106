@@ -89,6 +89,7 @@ body {
 
 .APP {
   height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -97,6 +98,7 @@ body {
 
 main {
   height: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -121,6 +123,7 @@ main {
   font-weight: 700;
   transition: all 125ms ease-in;
   cursor: pointer;
+  min-height: 35px;
 }
 
 .btn:hover:after {
@@ -222,10 +225,16 @@ form .submit-btn {
 }
 
 footer {
+  position: relative;
+  z-index: 10;
   text-align: center;
   background-color: var(--main-dark);
   border: 2px solid;
   color: rgba(255, 255, 255, 0.3);
+}
+
+select {
+  text-transform: capitalize;
 }
 
 @media (min-width: 768px) {
