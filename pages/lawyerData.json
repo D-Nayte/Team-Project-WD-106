@@ -9,7 +9,7 @@
     "phone": "+49987363837",
     "email": "test@test.de",
     "type": "lawyer",
-    "problems": ["salary,bullying"]
+    "problems": ["salary", "bullying"]
   },
   {
     "firstName": "Maik",
@@ -21,7 +21,7 @@
     "phone": "+49987363837",
     "email": "Maik.S@test.de",
     "type": "lawyer",
-    "problems": ["salary,severance pay"]
+    "problems": ["salary", "severance pay"]
   },
 
   {
@@ -34,7 +34,7 @@
     "phone": "+49987363000",
     "email": "R.Arendt@test.de",
     "type": "lawyer",
-    "problems": ["insurance,severance pay"]
+    "problems": ["insurance", "severance pay"]
   },
 
   {
@@ -47,7 +47,7 @@
     "phone": "+49911288800",
     "email": "Sophiebenz@test.de",
     "type": "lawyer",
-    "problems": ["injuries at work,salary"]
+    "problems": ["injuries at work", "salary"]
   },
 
   {
@@ -60,7 +60,7 @@
     "phone": "+438934990",
     "email": "M.Suttner@test.at",
     "type": "lawyer",
-    "problems": ["injuries at work,salary"]
+    "problems": ["injuries at work", "salary"]
   },
 
   {
@@ -73,7 +73,7 @@
     "phone": "+438934111",
     "email": "Andreasbauer@test.at",
     "type": "lawyer",
-    "problems": ["severance pay,insurance"]
+    "problems": ["severance pay", "insurance"]
   },
 
   {
@@ -86,7 +86,7 @@
     "phone": "+442088047777",
     "email": "Grahambond@test.co.uk",
     "type": "lawyer",
-    "problems": ["insurance,injuryies at work"]
+    "problems": ["insurance", "injuryies at work"]
   },
 
   {
@@ -99,6 +99,6 @@
     "phone": "+442073335100",
     "email": "S.Jones@test.co.uk",
     "type": "lawyer",
-    "problems": ["bullying,salary"]
+    "problems": ["bullying", "salary"]
   }
 ]
