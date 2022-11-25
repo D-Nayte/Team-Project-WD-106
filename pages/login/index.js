@@ -10,9 +10,10 @@ import { useSelector } from "react-redux";
 import { database } from "../../auth/fireBase";
 import { doc, getDoc } from "firebase/firestore";
 import Link from "next/link";
-import { logOut } from "../../auth/userAccess";
+import { logInUser, logOut } from "../../auth/userAccess";
 import Messages from "../../components/messages";
 import SearchResults from "../../components/SearchResults";
+import { useRouter } from "next/router";
 
 function Login() {
   const user = useSelector((state) => state.isLoggedIn);
@@ -21,9 +22,12 @@ function Login() {
   const [noUser, setNoUser] = useState(true);
   const [showDocuments, setShowDocuments] = useState(false);
   const [showMessages, setShowMessages] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const router = useRouter();
 
   async function getUserName() {
     if (user) {
+      setLoggedIn(true);
       const id = user.uid;
       const docRef = doc(database, "user-data", id);
       const docSnap = await getDoc(docRef);
@@ -31,17 +35,17 @@ function Login() {
         setUserName(`${docSnap.data()?.firstName} ${docSnap.data()?.lastName}`);
         docSnap;
       }
+      setNoUser(user);
     }
     setLoading(false);
   }
 
   useEffect(() => {
-    setNoUser(user);
     getUserName();
   }, [user]);
 
   if (loading) return "loading....";
-  if (!noUser)
+  if (!noUser || !user)
     return (
       <h1>
         You must be logged in!! <Link href="/">go back</Link>

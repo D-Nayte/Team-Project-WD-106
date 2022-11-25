@@ -57,7 +57,8 @@ export async function logInUser(email = "tes12t@test.de", password = "123456") {
 }
 
 export async function logOut() {
-  signOut(auth);
+  await signOut(auth);
+  return true;
 }
 
 async function _uploadAvatar(user, picture) {

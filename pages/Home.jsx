@@ -9,13 +9,18 @@ import background from "../assets/images/groupPicture-blue.jpg";
 function Home() {
   const [classChanger, setClassChanger] = useState("");
   const user = useSelector((state) => state.isLoggedIn);
+  const [loggedIn, setloggedIn] = useState(false);
+  const [redirect, setRedirect] = useState(false);
   const router = useRouter();
 
   async function verifyUser() {
-    if (user)
+    if (user) {
+      setRedirect(true);
       return setTimeout(() => {
         router.push("/login");
+        setRedirect(false);
       }, 2000);
+    }
 
     return user;
   }
@@ -24,7 +29,9 @@ function Home() {
     verifyUser();
   }, [user]);
 
-  if (user) return <h1>Redirecting to Dashboard......</h1>;
+  if (redirect) return <h1>Redirecting to Dashboard......</h1>;
+
+  if (user && loggedIn) return <h1>Loggin out...</h1>;
 
   return (
     <main className={styles.main}>
@@ -39,7 +46,11 @@ function Home() {
         If you need professional help from our experts please do not hesitate to
         sign up.
       </h2>
-      <Form className={styles.form} setClassChanger={setClassChanger} />
+      <Form
+        className={styles.form}
+        setClassChanger={setClassChanger}
+        setloggedIn={setloggedIn}
+      />
       <Submit classChanger={classChanger} setClassChanger={setClassChanger} />
     </main>
   );

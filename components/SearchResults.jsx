@@ -13,17 +13,17 @@ function SearchResults({
 }) {
   const user = useSelector((state) => state.isLoggedIn);
   const router = useRouter();
-  if (!user) return redirectUser();
-
-  function redirectUser() {
-    setTimeout(() => {
-      router.push("/");
-    }, 2000);
-    return <h1>You must be logged in!</h1>;
-  }
+  //
 
   if (!showResults || (!filteredLawyers && !filteredUnions)) return null;
+  // if (!user) return redirectUser();
 
+  // function redirectUser() {
+  //   setTimeout(() => {
+  //     router.push("/");
+  //   }, 2000);
+  //   return <h1>You must be logged in!</h1>;
+  // }
   if (filteredLawyers.lenght < 1 && filteredUnions < 1)
     return (
       <div className={styles.container}>

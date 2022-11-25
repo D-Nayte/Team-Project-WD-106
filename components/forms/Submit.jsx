@@ -17,11 +17,12 @@ function Submit({ classChanger, setClassChanger }) {
     const file = e.files[0];
     if (file) {
       const type = file?.name.slice(-4);
-      if (type !== (".png" || "jpeg" || "svg")) {
-        alert("only .png / .jpeg / .svg");
-        return (vaildPicture = "wrong type");
+      console.log(type == (".png" || ".jpg" || ".svg"));
+      if (type == ".png" || type == ".jpg" || type == ".svg") {
+        return (vaildPicture = file);
       }
-      return (vaildPicture = file);
+      alert("only .png / .jpg / .svg");
+      return (vaildPicture = "wrong type");
     }
     return (vaildPicture = false);
   }
@@ -34,7 +35,7 @@ function Submit({ classChanger, setClassChanger }) {
     const password = passwordRef.current.value;
     const firstName = firstNameRef.current.value;
     const lastName = lastNameRef.current.value;
-    if (avatar === "wrong type") return alert("only .png / .jpeg / .svg");
+    if (avatar === "wrong type") return alert("only .png / .jpg / .svg");
 
     if (confirmedPassword !== password) {
       return alert("Password does not match");

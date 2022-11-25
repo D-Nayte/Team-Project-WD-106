@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React, { useRef, useState } from "react";
 import { logInUser } from "../../auth/userAccess";
 
-function Forms({ setClassChanger }) {
+function Forms({ setClassChanger, setloggedIn }) {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const router = useRouter();
@@ -12,8 +12,11 @@ function Forms({ setClassChanger }) {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const user = await logInUser(email, password);
-    if (user.noUser) return console.log(user.error);
-    router.push("/login");
+
+    if (user) {
+      setloggedIn(true);
+      router.push("/login");
+    }
   }
 
   return (

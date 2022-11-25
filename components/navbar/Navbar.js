@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import style from "../../styles/navBar.module.css";
 import LogoTeamWork from "../../assets/images/Logo-team-work.svg";
@@ -9,12 +9,17 @@ import { logOut } from "../../auth/userAccess";
 
 function Navbar() {
   const navRef = useRef();
-  const route = useRouter();
+  const router = useRouter();
   const user = useSelector((store) => store.isLoggedIn);
 
   const showNavbar = () => {
     navRef.current.classList.toggle(`${style.responsiveNav}`);
   };
+
+  function logOutUser() {
+    logOut();
+    router.push("/");
+  }
 
   return (
     <header className={style.thisHeader}>
@@ -23,7 +28,7 @@ function Navbar() {
           className={style.logo}
           src={LogoTeamWork.src}
           alt="Logo-team-work"
-          onClick={() => route.push("/")}
+          onClick={() => router.push("/")}
         />
       </h3>
       <nav className={style.navStyle} ref={navRef}>
@@ -45,19 +50,14 @@ function Navbar() {
           style={!user ? { pointerEvents: "none", color: "gray" } : null}>
           Contact
         </a>
-        <Link
+        <a
           className={style.aLink}
-          href="/"
-          onClick={logOut}
+          href=""
+          onClick={logOutUser}
           style={!user ? { pointerEvents: "none", display: "none" } : null}>
           Log out
-        </Link>
-        <Link
-          className={style.aLink}
-          href="/login"
-          style={!user ? { pointerEvents: "none", display: "none" } : null}>
-          Dashboard
-        </Link>
+        </a>
+
         <button
           className={`${style.navBtn} ${style.navCloseBtn}`}
           onClick={showNavbar}>
