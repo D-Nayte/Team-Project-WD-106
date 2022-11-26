@@ -1,0 +1,34 @@
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 calc(var(--padding));
+}
+
+.background {
+  width: 200%;
+  position: relative;
+}
+
+.main > h2:first-child {
+  font-size: 3rem;
+  font-weight: 700;
+  border: 2px solid var(--main-cyan);
+  border-radius: var(--border-radius);
+  width: fit-content;
+  padding: calc(var(--padding) / 2) var(--padding);
+  background-color: var(--main-creme-opacity);
+  transform: translateY(40px);
+  z-index: 2;
+}
+
+.main > h2:nth-of-type(2) {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.main form {
+  margin-bottom: var(--padding) !important;
+}
