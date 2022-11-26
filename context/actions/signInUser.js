@@ -10,3 +10,16 @@ export function signOutUser(user = null) {
     payload: user,
   };
 }
+
+export function setShowData(string) {
+  return {
+    type: "SET_SHOWSTATE",
+    payload: string,
+  };
+}
+
+export function deleteShowData() {
+  return {
+    type: "DELETE_STATE",
+  };
+}

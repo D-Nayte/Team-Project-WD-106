@@ -12,11 +12,7 @@ function Forms({ setClassChanger, setloggedIn }) {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const user = await logInUser(email, password);
-
-    if (user) {
-      setloggedIn(true);
-      router.push("/login");
-    }
+    if (user) router.push({ pathname: "/login", query: { logout: false } });
   }
 
   return (

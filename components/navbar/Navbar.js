@@ -1,24 +1,25 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import style from "../../styles/navBar.module.css";
 import LogoTeamWork from "../../assets/images/Logo-team-work.svg";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
-import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../auth/userAccess";
+import { setShowData } from "../../context/actions/signInUser";
 
-function Navbar() {
+function Navbar({ setSowData }) {
   const navRef = useRef();
   const router = useRouter();
   const user = useSelector((store) => store.isLoggedIn);
+  const dispatch = useDispatch();
 
   const showNavbar = () => {
     navRef.current.classList.toggle(`${style.responsiveNav}`);
   };
 
   function logOutUser() {
+    router.push({ pathname: "/", query: { logout: true } });
     logOut();
-    router.push("/");
   }
 
   return (
@@ -34,25 +35,26 @@ function Navbar() {
       <nav className={style.navStyle} ref={navRef}>
         <a
           className={style.aLink}
-          href="/#"
+          href="#"
+          onClick={(e) => dispatch(setShowData("unions"))}
           style={!user ? { pointerEvents: "none", color: "gray" } : null}>
           Workers Unions
         </a>
         <a
           className={style.aLink}
-          href="/#"
+          href="#"
+          onClick={(e) => dispatch(setShowData("lawyers"))}
           style={!user ? { pointerEvents: "none", color: "gray" } : null}>
           Lawyers
         </a>
         <a
           className={style.aLink}
-          href="/#"
+          href="#"
           style={!user ? { pointerEvents: "none", color: "gray" } : null}>
           Contact
         </a>
         <a
           className={style.aLink}
-          href=""
           onClick={logOutUser}
           style={!user ? { pointerEvents: "none", display: "none" } : null}>
           Log out

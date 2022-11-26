@@ -2,8 +2,8 @@ import React from "react";
 import styles from "../styles/search.module.css";
 import UnionsCrad from "./UnionsCrad";
 import LawyerCard from "./LawyerCard";
-import { useSelector } from "react-redux";
-import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteShowData } from "../context/actions/signInUser";
 
 function SearchResults({
   filteredLawyers,
@@ -11,19 +11,15 @@ function SearchResults({
   showResults,
   setShowResults,
 }) {
-  const user = useSelector((state) => state.isLoggedIn);
-  const router = useRouter();
-  //
+  const dispatch = useDispatch();
+
+  function changeVisibility() {
+    setShowResults(false);
+    dispatch(deleteShowData());
+  }
 
   if (!showResults || (!filteredLawyers && !filteredUnions)) return null;
-  // if (!user) return redirectUser();
 
-  // function redirectUser() {
-  //   setTimeout(() => {
-  //     router.push("/");
-  //   }, 2000);
-  //   return <h1>You must be logged in!</h1>;
-  // }
   if (filteredLawyers.lenght < 1 && filteredUnions < 1)
     return (
       <div className={styles.container}>
@@ -36,19 +32,19 @@ function SearchResults({
       <h1>Search results</h1>
       {filteredUnions.length >= 1
         ? filteredUnions.map((union) => (
-            <div key={union.companyName}>
+            <div key={union.companyName + union.location}>
               <UnionsCrad union={union} />
             </div>
           ))
         : null}
       {filteredLawyers.length >= 1
         ? filteredLawyers.map((lawyer) => (
-            <div key={lawyer.companyName}>
+            <div key={lawyer.firstName + lawyer.email}>
               <LawyerCard lawyer={lawyer} />
             </div>
           ))
         : null}
-      <button onClick={() => setShowResults(false)} className="btn">
+      <button onClick={() => changeVisibility()} className="btn">
         close
       </button>
     </div>

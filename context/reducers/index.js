@@ -34,8 +34,20 @@ function messages(state = null, action) {
   }
 }
 
+function showData(state = null, action) {
+  switch (action.type) {
+    case "SET_SHOWSTATE":
+      return (state = action.payload);
+    case "DELETE_STATE":
+      return (state = null);
+
+    default:
+      return state;
+  }
+}
+
 export default function allReducers() {
-  return combineReducers({ companyData, isLoggedIn, messages });
+  return combineReducers({ companyData, isLoggedIn, messages, showData });
 }
 
 //Redux examples

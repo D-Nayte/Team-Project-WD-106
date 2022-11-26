@@ -1,8 +1,8 @@
 import Home from "./Home";
-import React from "react";
+import React, { useEffect } from "react";
 
-function index() {
-  return <Home />;
+function index(props) {
+  return <Home props={props} />;
 }
 
 export default index;

@@ -58,6 +58,7 @@ export async function logInUser(email = "tes12t@test.de", password = "123456") {
 
 export async function logOut() {
   await signOut(auth);
+
   return true;
 }
 

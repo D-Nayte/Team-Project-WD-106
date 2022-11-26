@@ -5,6 +5,7 @@ import SearchResults from "../SearchResults";
 function Search() {
   const unionsData = useSelector((storage) => storage.companyData.unions);
   const lawyersData = useSelector((storage) => storage.companyData.lawyers);
+  const data = useSelector((state) => state.showData);
 
   const [lawyerProblems, setLawyerProblems] = useState([]);
   const [unionsBuisness, setUnionsBuisness] = useState([]);
@@ -42,6 +43,9 @@ function Search() {
   }
 
   function searchUnions(selectedBuisness) {
+    if (selectedBuisness === "none")
+      return setFilteredUnion((old) => (old = []));
+
     const result = unionsData.filter((union) =>
       union.buisnesss.find((buisness) => buisness === selectedBuisness)
     );
@@ -49,6 +53,9 @@ function Search() {
   }
 
   function searchLawyers(selectedProblems) {
+    if (selectedProblems === "none")
+      return setFilteredLawyers((old) => (old = []));
+
     const result = lawyersData.filter((lawyer) =>
       lawyer.problems.find((problem) => problem === selectedProblems)
     );
@@ -57,10 +64,33 @@ function Search() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    if (data === "unions") {
+      setFilteredUnion((old) => (old = unionsData));
+      setFilteredLawyers((old) => (old = []));
+    }
+    if (data === "lawyers") {
+      setFilteredLawyers((old) => (old = unionsData));
+      setFilteredUnion((old) => (old = []));
+    }
     setShowResults(true);
   }
 
-  useEffect(() => {}, [filteredLawyers]);
+  useEffect(() => {
+    if (data) {
+      if (data === "unions") {
+        setFilteredUnion((old) => (old = unionsData));
+        setFilteredLawyers((old) => (old = []));
+      }
+      if (data === "lawyers") {
+        setFilteredLawyers((old) => (old = lawyersData));
+        setFilteredUnion((old) => (old = []));
+      }
+      setShowResults(true);
+    } else {
+      setFilteredUnion((old) => (old = []));
+      setFilteredLawyers((old) => (old = []));
+    }
+  }, [data]);
 
   useEffect(() => {
     getAllLawyerProblems();
@@ -77,6 +107,7 @@ function Search() {
           <option value="empty" disabled>
             Select your Buisness
           </option>
+          <option value="none">None</option>
           {unionsBuisness.map((buisness) => (
             <option key={buisness} value={buisness}>
               {buisness}
@@ -91,6 +122,8 @@ function Search() {
           <option value="empty" disabled>
             Select your Problem
           </option>
+          <option value="none">None</option>
+
           {lawyerProblems.map((problem) => (
             <option key={problem} value={problem}>
               {problem}

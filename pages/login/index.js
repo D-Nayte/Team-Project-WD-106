@@ -10,24 +10,19 @@ import { useSelector } from "react-redux";
 import { database } from "../../auth/fireBase";
 import { doc, getDoc } from "firebase/firestore";
 import Link from "next/link";
-import { logInUser, logOut } from "../../auth/userAccess";
 import Messages from "../../components/messages";
-import SearchResults from "../../components/SearchResults";
-import { useRouter } from "next/router";
 
 function Login() {
+  const data = useSelector((state) => state.showData);
   const user = useSelector((state) => state.isLoggedIn);
   const [userName, setUserName] = useState("no Name Found");
   const [loading, setLoading] = useState(true);
   const [noUser, setNoUser] = useState(true);
   const [showDocuments, setShowDocuments] = useState(false);
   const [showMessages, setShowMessages] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
-  const router = useRouter();
 
   async function getUserName() {
     if (user) {
-      setLoggedIn(true);
       const id = user.uid;
       const docRef = doc(database, "user-data", id);
       const docSnap = await getDoc(docRef);
@@ -45,12 +40,13 @@ function Login() {
   }, [user]);
 
   if (loading) return "loading....";
-  if (!noUser || !user)
+  if (!noUser || !user) {
     return (
       <h1>
         You must be logged in!! <Link href="/">go back</Link>
       </h1>
     );
+  }
 
   return (
     <main className={styles.overview}>
