@@ -72,7 +72,6 @@ body {
   height: 100vh;
   width: 100vw;
   z-index: -10;
-  overflow: hidden;
 }
 
 .app-background-container img {
@@ -97,7 +96,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 main {

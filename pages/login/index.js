@@ -4,7 +4,7 @@ import { HiOutlineDocumentText } from "react-icons/hi";
 import styles from "../../styles/login.module.css";
 import AvatarPicture from "../../components/AvatarPicture";
 import Documents from "../../components/Documents";
-import ProfileButton from "../../components/profileButtons";
+import ProfileButton from "../../components/ProfileButtons";
 import Search from "../../components/forms/Search";
 import { useSelector } from "react-redux";
 import { database } from "../../auth/fireBase";

@@ -1,5 +1,4 @@
 .main {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,6 +29,8 @@
 }
 
 .main form {
+  width: 66%;
+  margin: auto;
   margin-bottom: var(--padding) !important;
 }
 
@@ -37,11 +38,11 @@
   .main {
     display: grid;
     overflow: hidden;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
     grid-template-areas:
-      "header header header . . "
-      "intro intro intro form form";
+      ". header header header header ." 
+      ". intro intro intro intro ."
+      ". . form form . .";
   }
 
   .main > h2:first-child {
@@ -64,6 +65,10 @@
 
   .main form {
     grid-area: form;
+    padding-top: 10%;
+    margin-top: 10%;
+    padding-bottom: 10%;
+    margin-bottom: 10%;
     font-size: 1.8rem;
     gap: 1rem;
   }
