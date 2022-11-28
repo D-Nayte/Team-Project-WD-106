@@ -1,7 +1,11 @@
 .avatar {
   width: 32%;
+  max-width: 100px;
   aspect-ratio: 1 / 1;
+  -o-object-position: 50% 50%;
   object-position: 50% 50%;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 50%;
+  grid-area: avatar;
 }

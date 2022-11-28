@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import SearchResults from "../SearchResults";
 
-function Search() {
+function Search({ setShowResults, setFilteredLawyers, setFilteredUnion }) {
   const unionsData = useSelector((storage) => storage.companyData.unions);
   const lawyersData = useSelector((storage) => storage.companyData.lawyers);
   const data = useSelector((state) => state.showData);
@@ -10,10 +10,6 @@ function Search() {
   const [lawyerProblems, setLawyerProblems] = useState([]);
   const [unionsBuisness, setUnionsBuisness] = useState([]);
   const [cityList, setCItyList] = useState(new Set());
-
-  const [showResults, setShowResults] = useState(false);
-  const [filteredLawyers, setFilteredLawyers] = useState({});
-  const [filteredUnions, setFilteredUnion] = useState({});
 
   function getAllLawyerProblems() {
     const lawyersProblemsList = new Set();
@@ -98,7 +94,7 @@ function Search() {
   }, [lawyersData, unionsData]);
 
   return (
-    <div>
+    <div className="search-form-wrapper">
       <form className="search-form" onSubmit={(e) => handleSubmit(e)}>
         <label>Select your Buisness</label>
         <select
@@ -144,12 +140,6 @@ function Search() {
         </select>
         <button className="btn">Search</button>
       </form>
-      <SearchResults
-        setShowResults={setShowResults}
-        showResults={showResults}
-        filteredLawyers={filteredLawyers}
-        filteredUnions={filteredUnions}
-      />
     </div>
   );
 }

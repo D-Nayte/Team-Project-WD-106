@@ -6,11 +6,12 @@
   font-weight: 800;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
-  padding: calc(var(--padding) / 2);
+  padding: calc(var(--padding) / 2) var(--padding);
   border-radius: var(--border-radius);
   overflow: hidden;
   cursor: pointer;
   pointer-events: visible;
+  z-index: 1;
 }
 
 .button:after {

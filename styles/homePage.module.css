@@ -17,6 +17,8 @@
   font-weight: 700;
   border: 2px solid var(--main-cyan);
   border-radius: var(--border-radius);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: calc(var(--padding) / 2) var(--padding);
   background-color: var(--main-creme-opacity);

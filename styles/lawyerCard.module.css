@@ -7,15 +7,19 @@
   font-size: 12px;
   row-gap: 1rem;
   background-color: whitesmoke;
+  max-width: 370px;
 }
+
 .lawyer_info_container {
   display: flex;
   justify-content: flex-start;
   gap: 2rem;
 }
+
 .lawyer_profile_picture {
   background-size: contain;
   min-width: 60px;
+  max-width: 80px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   align-self: flex-start;

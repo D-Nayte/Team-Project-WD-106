@@ -11,6 +11,7 @@ import { database } from "../../auth/fireBase";
 import { doc, getDoc } from "firebase/firestore";
 import Link from "next/link";
 import Messages from "../../components/messages";
+import SearchResults from "../../components/SearchResults";
 
 function Login() {
   const data = useSelector((state) => state.showData);
@@ -20,6 +21,10 @@ function Login() {
   const [noUser, setNoUser] = useState(true);
   const [showDocuments, setShowDocuments] = useState(false);
   const [showMessages, setShowMessages] = useState(false);
+
+  const [showResults, setShowResults] = useState(false);
+  const [filteredLawyers, setFilteredLawyers] = useState({});
+  const [filteredUnions, setFilteredUnion] = useState({});
 
   async function getUserName() {
     if (user) {
@@ -75,12 +80,22 @@ function Login() {
       <h2 className={styles.welcome}>
         WE ARE READY TO HELP YOU. TELL US MORE ABOUT YOUR PROBLEM.
       </h2>
-      <Search />
+      <Search
+        setShowResults={setShowResults}
+        setFilteredLawyers={setFilteredLawyers}
+        setFilteredUnion={setFilteredUnion}
+      />
       <Documents
         showDocuments={showDocuments}
         setShowDocuments={setShowDocuments}
       />
       <Messages showMessages={showMessages} setShowMessages={setShowMessages} />
+      <SearchResults
+        setShowResults={setShowResults}
+        showResults={showResults}
+        filteredLawyers={filteredLawyers}
+        filteredUnions={filteredUnions}
+      />
     </main>
   );
 }

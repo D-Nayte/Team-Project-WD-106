@@ -10,6 +10,7 @@ function LawyerCard({ lawyer }) {
 
   return (
     <article className={style.lawyer_container}>
+      {console.log(gender)}
       <div className={style.lawyer_info_container}>
         <div
           className={style.lawyer_profile_picture}
