@@ -1,4 +1,11 @@
 {
+  "name": "team-project-wd-106",
+  "version": "1.0.0",
+  "description": "Masterschool TEam Project",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "dependencies": {
     "firebase": "^9.14.0",
     "next": "^13.0.2",
@@ -8,7 +15,18 @@
     "react-redux": "^8.0.5",
     "redux": "^4.2.0"
   },
+  "devDependencies": {},
   "scripts": {
-    "dev": "next"
-  }
+    "start": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D-Nayte/Team-Project-WD-106.git"
+  },
+  "author": "Andy Schunke <schunke.andy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/D-Nayte/Team-Project-WD-106/issues"
+  },
+  "homepage": "https://github.com/D-Nayte/Team-Project-WD-106#readme"
 }
