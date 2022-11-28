@@ -12,6 +12,9 @@ First and foremost to learn to operate effectively in a team, build collaboratio
 
 An app called "Workers Rights" which is designed for workers in all sectors to get help if they are suffering from mistreatment at work. The app connects them with the lawyers and unions nearest to them and with the most relevant experience in solving their problem.
 
+<img src="./assets/images/readmePictures/worker-rights-app1.png">
+<img src="./assets/images/readmePictures/worker-rights-app2.png">
+
 ## How did we make our collaboration work?
 
 Andy, who is the most competent coder, was our group leader. The three of us already knew each other from working on a Next.js project so we decided to work together on this one. We communicated via Slack and Trello, and had regular Zoom meetings. First we created a mock-up via <a href="https://www.figma.com/file/9xDhEqRp6fD1m4Gq8ErDuK/106-Team-Project-team-library?node-id=421%3A54&t=lFiqQliQfpxSA3VK-0">Figma</a>. Then we created different branches for different components and component versions. Andy managed the branch merging, Firebase authentication, routing, page layout and debugging. Vedran managed the forms, footer, database and the desktop CSS. I (Antonia) managed the navbar and worked with Vedran on the database and desktop CSS.
@@ -20,11 +23,26 @@ Andy, who is the most competent coder, was our group leader. The three of us alr
 
 ## How to install the app
 
-fork or clone this repo and
+Fork or clone this repo and
 
 ```
 npm install
 npm run start
+```
+
+### You need also a Firebase account
+
+- addionaly add a Database, storage and Auth to your Firebase
+- create a "`.env.local`" file inside the main directory
+- copy your firebase credentials there like so :
+
+```js
+NEXT_PUBLIC_FIREBASE_API_KEY = your_data;
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN = your_data;
+NEXT_PUBLIC_FIREBASE_PROJECT_ID = ayour_data;
+NEXT_PUBLIC_FIREBASE_STORAGEBUCKET = your_data;
+NEXT_PUBLIC_FIREBASE_MESSAGIN_SENDER_ID = your_data;
+NEXT_PUBLIC_FIREBASE_APP_ID = your_data;
 ```
 
 ---

@@ -53,8 +53,11 @@
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  max-height: 50px;
   padding: calc();
+}
+
+.profileButtons button {
+  max-height: 50px;
 }
 
 .welcome {
@@ -63,6 +66,7 @@
   margin-top: var(--padding);
   font-weight: 600;
   text-shadow: 1px 1px 2px var(--main-creme);
+  display: none;
 }
 
 .email {
@@ -91,6 +95,7 @@
     grid-area: message;
     font-size: 2.5rem;
     font-weight: 600;
+    display: block;
   }
 
   .profileButtons {
