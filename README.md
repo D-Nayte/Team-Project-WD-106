@@ -37,7 +37,7 @@ Andy, who is the most competent coder, was our group leader. The three of us alr
 
 ## **Live preview**
 
-## Click here ---->>> **[Worker Rights](https://team-project-wd-106-545e13qov-d-nayte.vercel.app/login?logout=false)**
+## Click here ---->>> **[Worker Rights](https://team-project-wd-106.vercel.app/)**
 
 </br>
 
