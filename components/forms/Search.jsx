@@ -127,7 +127,7 @@ function Search({ setShowResults, setFilteredLawyers, setFilteredUnion }) {
           ))}
         </select>
 
-        <label>Select your City</label>
+        {/* <label>Select your City</label>
         <select defaultValue="empty">
           <option value="empty" disabled>
             Select your City
@@ -137,7 +137,7 @@ function Search({ setShowResults, setFilteredLawyers, setFilteredUnion }) {
               {city}
             </option>
           ))}
-        </select>
+        </select> */}
         <button className="btn">Search</button>
       </form>
     </div>

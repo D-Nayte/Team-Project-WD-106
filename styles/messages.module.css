@@ -18,7 +18,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(216, 216, 216, 0.603);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
@@ -30,11 +30,7 @@
   padding: calc(var(--padding) / 2) var(--padding);
   align-items: center;
   z-index: 10;
-}
-
-.overview_button {
-  width: 100%;
-  text-align: right;
+  border: 4px solid red;
 }
 
 .header {
@@ -44,21 +40,23 @@
 
 .message_container {
   width: 100%;
-  height: 100%;
+  height: fit-content;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  -moz-column-gap: 2rem;
-  column-gap: 2rem;
-  margin-top: 1rem;
+  row-gap: 2rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* margin-top: 1rem; */
+  overflow: auto;
 }
 
-.overview button {
-  background-color: transparent;
-  align-self: flex-start;
+.overview_button {
+  align-self: center;
+  justify-self: flex-end;
+  justify-items: flex-end;
   border: none;
+  margin-top: 1rem;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 1.6rem;
 }
 
 .container h2 {
@@ -80,16 +78,41 @@
 }
 
 .icon_container {
+  height: fit-content;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  transition: all 200ms;
+  column-gap: 2rem;
+}
+.icon_container p {
+  height: 100px;
+  border-radius: var(--border-radius);
+  color: var(--main-orange);
+  background-color: var(--main-dark);
+  padding: var(--padding);
+  content: "...";
+  overflow: hidden;
+  transition: all 450ms;
+}
+
+.icon_container p:hover,
+.icon_container p:focus {
+  height: 100%;
+}
+
+.info_wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: black;
-  transition: all 200ms;
+  padding: 2rem;
+  text-align: center;
 }
 
-.icon_container::after {
+/* .icon_container::after {
   content: attr(data-msg) " ";
   position: absolute;
   color: black;
@@ -128,12 +151,12 @@
   color: var(--main-orange);
   opacity: 100;
   pointer-events: all;
-}
+} */
 
 .icon_container i {
   font-size: 3.5rem;
 }
 
 .icon_container h3 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }

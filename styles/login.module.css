@@ -58,6 +58,12 @@
 
 .profileButtons button {
   max-height: 50px;
+  box-shadow: var(--small-shadow);
+  transition: all 250ms;
+}
+.profileButtons button:hover {
+  scale: 1.05;
+  box-shadow: var(--small-shadow-animate);
 }
 
 .welcome {

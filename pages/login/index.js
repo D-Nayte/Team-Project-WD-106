@@ -75,7 +75,7 @@ function Login() {
       <div className={styles.profileButtons}>
         <ProfileButton showContent={setShowMessages} title="Messages" />
         <ProfileButton showContent={setShowDocuments} title="Documents" />
-        <ProfileButton title="contacts" />
+        {/* <ProfileButton title="contacts" /> */}
       </div>
       <h2 className={styles.welcome}>
         WE ARE READY TO HELP YOU. TELL US MORE ABOUT YOUR PROBLEM.

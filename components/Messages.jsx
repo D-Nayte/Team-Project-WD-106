@@ -33,28 +33,33 @@ function Messages({ showMessages, setShowMessages }) {
 
   return (
     <section className={styles.overview}>
-      <button
-        onClick={() => setShowMessages(false)}
-        className={styles.overview_button}>
-        X
-      </button>
       <div className={styles.message_container}>
         {messageList.map((message) => {
           counter += 1;
           return (
-            <button
+            <article
               key={counter}
               className={styles.icon_container}
               data-msg={message && message.message.message}>
-              <i>
-                <TbMessage />
-              </i>
-              <h3>{message && message.id}</h3>
-              <h3>{getDate(message)}</h3>
-            </button>
+              <div className={styles.info_wrapper}>
+                <i>
+                  <TbMessage />
+                </i>
+                <h3>
+                  <strong>{message && message.id}</strong>
+                </h3>
+                <h3>{getDate(message)}</h3>
+              </div>
+              <p>{message && message.message.message}</p>
+            </article>
           );
         })}
       </div>
+      <button
+        onClick={() => setShowMessages(false)}
+        className={`${styles.overview_button}  btn `}>
+        Close
+      </button>
     </section>
   );
 }

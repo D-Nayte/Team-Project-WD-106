@@ -49,7 +49,7 @@ function Documents({ showDocuments, setShowDocuments }) {
             counter += 1;
             return (
               <p key={counter}>
-                <span>
+                <span className={styles.doc_svg}>
                   <GrDocumentPdf />
                 </span>
                 <a href={doc.url}>{doc.meta}</a>
@@ -57,7 +57,9 @@ function Documents({ showDocuments, setShowDocuments }) {
             );
           })}
       </div>
-      <button onClick={() => setShowDocuments(false)} className="btn">
+      <button
+        onClick={() => setShowDocuments(false)}
+        className={`${styles.doc_button}  btn`}>
         CLOSE
       </button>
     </div>

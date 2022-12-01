@@ -47,12 +47,12 @@ function Navbar({ setSowData }) {
           style={!user ? { pointerEvents: "none", color: "gray" } : null}>
           Lawyers
         </a>
-        <a
+        {/* <a
           className={style.aLink}
           href="#"
           style={!user ? { pointerEvents: "none", color: "gray" } : null}>
           Contact
-        </a>
+        </a> */}
         <a
           className={style.aLink}
           onClick={logOutUser}
