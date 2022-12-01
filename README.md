@@ -34,7 +34,7 @@ npm run start
 
 - addionaly add a Database, storage and Auth to your Firebase
 - create a "`.env.local`" file inside the main directory
-- copy your firebase credentials there like so :
+- copy your firebase credentials there like so:
 
 ```js
 NEXT_PUBLIC_FIREBASE_API_KEY = your_data;
