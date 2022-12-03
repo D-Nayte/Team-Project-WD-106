@@ -20,7 +20,7 @@
             100%{
               d: path("M 0,700 C 0,700 0,175 0,175 C 301,187 602,199 842,199 C 1082,199 1261,187 1440,175 C 1440,175 1440,700 1440,700 Z");
             }
-          }</style><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#8CBDB9"></stop><stop offset="95%" stop-color="#E8ECEB"></stop></linearGradient></defs><path d="M 0,700 C 0,700 0,175 0,175 C 301,187 602,199 842,199 C 1082,199 1261,187 1440,175 C 1440,175 1440,700 1440,700 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.4" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 350)"></path><style>
+          }</style><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#5a8eb8"></stop><stop offset="95%" stop-color="#E8ECEB"></stop></linearGradient></defs><path d="M 0,700 C 0,700 0,175 0,175 C 301,187 602,199 842,199 C 1082,199 1261,187 1440,175 C 1440,175 1440,700 1440,700 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.4" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 350)"></path><style>
           .path-1{
             animation:pathAnim-1 24s;
             animation-timing-function: linear;

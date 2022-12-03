@@ -1,7 +1,7 @@
 .overview {
   background-image: url("../assets/images/groupPicture-green.jpg");
   background-repeat: no-repeat;
-  background-size: 1100px;
+  background-size: auto 500px;
   background-position: center bottom;
   z-index: 0;
 }
@@ -41,6 +41,7 @@
   font-weight: 600;
   margin-bottom: 0.5rem;
   grid-area: name;
+  font-size: 2rem;
 }
 
 .icons {

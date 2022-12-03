@@ -55,13 +55,22 @@
   }
 
   .main > h2:nth-of-type(2) {
-    font-size: 3.5rem;
+    font-size: 4rem;
     grid-area: intro;
     font-weight: 800;
+    text-shadow: 0px 0px 3px var(--main-cyan);
   }
 
   .background {
-    display: none;
+    --position: 100vw;
+    /* display: none; */
+    position: absolute;
+    /* min-width: 1200px; */
+    width: 100%;
+    z-index: -5;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 
   .main form {

@@ -15,7 +15,7 @@ function Home({ props }) {
   async function verifyUser() {
     if (router.query.logout) return;
 
-    if (user) {
+    if (user && !router.query.logout) {
       setRedirect(true);
       router.push({ pathname: "/login", query: { logout: false } });
       setRedirect(false);
@@ -49,8 +49,3 @@ function Home({ props }) {
 }
 
 export default Home;
-
-
-
-
-

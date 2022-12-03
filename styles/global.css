@@ -144,6 +144,9 @@ main {
 
 form {
   position: relative;
+  min-width: 300px;
+  width: 100%;
+  max-width: 900px;
   box-shadow: var(--small-shadow);
   border: 2px solid var(--main-cyan);
   border-radius: var(--border-radius);
@@ -151,7 +154,7 @@ form {
   flex-direction: column;
   align-items: center;
   padding: calc(var(--padding) / 4);
-  align-self: stretch;
+  /* align-self: stretch; */
   overflow: hidden;
   row-gap: 0.5rem;
   z-index: 1;
@@ -163,7 +166,7 @@ form:after {
   height: 100%;
   position: absolute;
   top: -30%;
-  right: 97%;
+  right: 100%;
   transform-origin: top right;
   background-image: url("../assets/images/background-static.svg");
   background-size: cover;
@@ -178,7 +181,8 @@ form::before {
   height: 100%;
   position: absolute;
   top: 0;
-  background-color: var(--main-creme);
+  background-color: var(--main-creme-opacity);
+  backdrop-filter: blur(7px);
   z-index: -2;
 }
 
@@ -214,12 +218,22 @@ form .submit-btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.4);
+  align-items: center;
+  background-color: rgba(170, 170, 170, 0.788);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   z-index: 100;
   transition: all 250ms;
   padding: var(--padding);
+}
+
+.submit-form.active > div {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .submit-form {
@@ -228,7 +242,15 @@ form .submit-btn {
 
 .submit-form h2 {
   font-weight: 700;
-  text-align: right;
+  /* text-align: center; */
+  font-size: 3.5rem;
+  text-shadow: 1px 1px 2px var(--main-cyan);
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.submit-form.active form {
+  width: 100%;
 }
 
 footer {
@@ -267,18 +289,18 @@ select {
     height: 50%;
     -o-object-fit: cover;
     object-fit: cover;
-    top: -30%;
+    top: -10%;
     left: -5%;
     rotate: -10deg;
     z-index: -10;
   }
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   body {
     background-image: none;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center bottom;
   }
-}
+} */

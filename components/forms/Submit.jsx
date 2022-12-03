@@ -49,53 +49,60 @@ function Submit({ classChanger, setClassChanger }) {
 
   return (
     <div className={`submit-form ${classChanger}`}>
-      <h2 onClick={() => setClassChanger("")}>X</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="firstname">Firstname</label>
-        <input
-          ref={firstNameRef}
-          type="text"
-          placeholder="Firstname"
-          required
-        />
-        <label htmlFor="lastname">Lastname</label>
-        <input type="text" ref={lastNameRef} placeholder="Lastname" required />
+      <div>
+        <h2 onClick={() => setClassChanger("")}>X</h2>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="firstname">Firstname</label>
+          <input
+            ref={firstNameRef}
+            type="text"
+            placeholder="Firstname"
+            required
+          />
+          <label htmlFor="lastname">Lastname</label>
+          <input
+            type="text"
+            ref={lastNameRef}
+            placeholder="Lastname"
+            required
+          />
 
-        <label>Enter your Email</label>
-        <input
-          ref={emailRef}
-          type="email"
-          name="email"
-          placeholder="Enter your Email"
-          required
-        />
+          <label>Enter your Email</label>
+          <input
+            ref={emailRef}
+            type="email"
+            name="email"
+            placeholder="Enter your Email"
+            required
+          />
 
-        <label>Enter your Password</label>
-        <input
-          type="password"
-          ref={passwordRef}
-          placeholder="Enter your Password"
-          minLength="6"
-          required
-        />
+          <label>Enter your Password</label>
+          <input
+            type="password"
+            ref={passwordRef}
+            placeholder="Enter your Password"
+            minLength="6"
+            required
+          />
 
-        <label>Confirm your Password</label>
-        <input
-          type="password"
-          ref={confirmedPasswordRef}
-          placeholder="Confirm your Password"
-          minLength="6"
-          required
-        />
+          <label>Confirm your Password</label>
+          <input
+            type="password"
+            ref={confirmedPasswordRef}
+            placeholder="Confirm your Password"
+            minLength="6"
+            required
+          />
 
-        <label>Avatar Image</label>
-        <input
-          type="file"
-          ref={pictureRef}
-          onChange={(e) => handleFile(e.target)}
-        />
-        <button className="btn submit-btn">Submit</button>
-      </form>
+          <label>Avatar Image</label>
+          <input
+            type="file"
+            ref={pictureRef}
+            onChange={(e) => handleFile(e.target)}
+          />
+          <button className="btn submit-btn">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }

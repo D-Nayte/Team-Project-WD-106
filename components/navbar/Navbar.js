@@ -20,6 +20,7 @@ function Navbar({ setSowData }) {
   function logOutUser() {
     router.push({ pathname: "/", query: { logout: true } });
     logOut();
+    showNavbar();
   }
 
   return (
@@ -36,14 +37,19 @@ function Navbar({ setSowData }) {
         <a
           className={style.aLink}
           href="#"
-          onClick={(e) => dispatch(setShowData("unions"))}
+          onClick={(e) => {
+            dispatch(setShowData("unions")), showNavbar();
+          }}
           style={!user ? { pointerEvents: "none", color: "gray" } : null}>
           Workers Unions
         </a>
         <a
           className={style.aLink}
           href="#"
-          onClick={(e) => dispatch(setShowData("lawyers"))}
+          onClick={(e) => {
+            dispatch(setShowData("lawyers"));
+            showNavbar();
+          }}
           style={!user ? { pointerEvents: "none", color: "gray" } : null}>
           Lawyers
         </a>
