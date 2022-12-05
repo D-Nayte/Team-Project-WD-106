@@ -156,6 +156,21 @@
   .overview {
     background-image: url("../assets/images/groupPicture-blue.jpg");
     background-repeat: no-repeat;
+    background-size: 1600px;
+    background-position: center bottom;
+    z-index: 0;
+  }
+  .welcome {
+    grid-area: message;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 1800px) {
+  .overview {
+    background-image: url("../assets/images/groupPicture-blue.jpg");
+    background-repeat: no-repeat;
     background-size: 2100px;
     background-position: center bottom;
     z-index: 0;
