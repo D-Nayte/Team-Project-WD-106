@@ -12,6 +12,12 @@
 
 </br>
 
+## **Live preview**
+
+## Click here ---->>> **[Worker Rights](https://team-project-wd-106.vercel.app/)**
+
+</br>
+
 ---
 
 ## What is Masterschool?
@@ -32,14 +38,6 @@ An app called "Workers Rights" which is designed for workers in all sectors to g
 ## How did we make our collaboration work?
 
 Andy, who is the most competent coder, was our group leader. The three of us already knew each other from working on a Next.js project so we decided to work together on this one. We communicated via Slack and Trello, and had regular Zoom meetings. First we created a mock-up via <a href="https://www.figma.com/file/9xDhEqRp6fD1m4Gq8ErDuK/106-Team-Project-team-library?node-id=421%3A54&t=lFiqQliQfpxSA3VK-0">Figma</a>. Then we created different branches for different components and component versions. Andy managed the branch merging, Firebase authentication, routing, page layout and debugging. Vedran managed the forms, footer, database and the desktop CSS. I (Antonia) managed the navbar and worked with Vedran on the database and desktop CSS.
-
----
-
-## **Live preview**
-
-## Click here ---->>> **[Worker Rights](https://team-project-wd-106.vercel.app/)**
-
-</br>
 
 ---
 
